@@ -180,7 +180,6 @@ namespace Content.Server.NodeContainer.Nodes
                 }
             }
 
-            // Ноды из того же контейнера (та же сущность) — одна группа, газ течёт между ними (Z-трубы, мультипорты и т.д.)
             if (nodeQuery.TryGetComponent(Owner, out var container))
             {
                 foreach (var node in container.Nodes.Values)
