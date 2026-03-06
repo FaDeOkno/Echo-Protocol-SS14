@@ -1,3 +1,4 @@
+using Content.Shared._Echo.Dirt;
 using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
@@ -79,6 +80,10 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, WieldAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, UnwieldAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, IngestionAttemptEvent>(RefRelayInventoryEvent);
+
+        // PE-Tweak-Start: Inventory relayed events
+        SubscribeLocalEvent<InventoryComponent, AdjustDirtEvent>(RefRelayInventoryEvent);
+        // PE-Tweak-End
 
         // Eye/vision events
         SubscribeLocalEvent<InventoryComponent, CanSeeAttemptEvent>(RelayInventoryEvent);
