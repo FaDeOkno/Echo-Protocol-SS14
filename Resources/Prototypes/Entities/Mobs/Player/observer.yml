@@ -27,6 +27,7 @@
         density: 15
         layer:
         - GhostImpassable
+  - type: CEZLevelGhostMover  # ECHO-Tweak
 
 # shared parent between aghosts, replay spectators and normal observers
 - type: entity
