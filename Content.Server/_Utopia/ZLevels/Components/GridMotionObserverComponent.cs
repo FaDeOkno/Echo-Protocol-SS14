@@ -2,7 +2,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Maths;
 using System.Numerics;
 
-namespace Content.Server._Utopia.ZLevel.Components;
+namespace Content.Server._Utopia.ZLevels.Components;
 
 [RegisterComponent]
 public sealed partial class GridMotionObserverComponent : Component

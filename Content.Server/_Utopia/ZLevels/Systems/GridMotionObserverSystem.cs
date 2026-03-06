@@ -1,11 +1,11 @@
-using Content.Server._Utopia.ZLevel.Components;
-using Content.Server._Utopia.ZLevel.Events;
+using Content.Server._Utopia.ZLevels.Components;
+using Content.Server._Utopia.ZLevels.Events;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 using Robust.Shared.Maths;
 using System.Numerics;
 
-namespace Content.Server._Utopia.ZLevel.Systems;
+namespace Content.Server._Utopia.ZLevels.Systems;
 
 public sealed class GridMotionObserverSystem : EntitySystem
 {

@@ -1,7 +1,7 @@
-using Content.Server._Utopia.ZLevel.Components;
-using Content.Server._Utopia.ZLevel.Events;
+using Content.Server._Utopia.ZLevels.Components;
+using Content.Server._Utopia.ZLevels.Events;
 
-namespace Content.Server._Utopia.ZLevel.Systems;
+namespace Content.Server._Utopia.ZLevels.Systems;
 
 public sealed class GridSyncSystem : EntitySystem
 {
