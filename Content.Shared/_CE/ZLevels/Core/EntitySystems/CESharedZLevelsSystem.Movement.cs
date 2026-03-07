@@ -5,6 +5,7 @@
 
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Chasm;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -32,7 +33,7 @@ public abstract partial class CESharedZLevelsSystem
     /// <summary>
     /// The minimum speed required to trigger LandEvent events.
     /// </summary>
-    private const float ImpactVelocityLimit = 5.0f;
+    private const float ImpactVelocityLimit = 0.75f;
 
     private EntityQuery<CEZLevelHighGroundComponent> _highgroundQuery;
 
@@ -139,7 +140,7 @@ public abstract partial class CESharedZLevelsSystem
 
                 if (distanceToGround <= 0.05f) //There`s a ground
                 {
-                    if (MathF.Abs(zPhys.Velocity) >= ImpactVelocityLimit)
+                    if (MathF.Abs(zPhys.Velocity) >= Cfg.GetCVar(EchoCCVars.ZImpactVelocityLimit)) // ECHO-Tweak: перенос констант в конфиг
                     {
                         RaiseLocalEvent(uid, new CEZLevelHitEvent(-zPhys.Velocity));
                         var land = new LandEvent(null, true);
@@ -168,7 +169,7 @@ public abstract partial class CESharedZLevelsSystem
             {
                 if (HasTileAbove(uid)) //Hit roof
                 {
-                    if (MathF.Abs(zPhys.Velocity) >= ImpactVelocityLimit)
+                    if (MathF.Abs(zPhys.Velocity) >= Cfg.GetCVar(EchoCCVars.ZImpactVelocityLimit)) // ECHO-Tweak: перенос констант в конфиг
                     {
                         RaiseLocalEvent(uid, new CEZLevelHitEvent(zPhys.Velocity));
                         var land = new LandEvent(null, true);

@@ -6,6 +6,7 @@
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
 using Content.Shared.Actions;
+using Content.Shared.CCVar;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
@@ -109,7 +110,7 @@ public sealed partial class CEZLevelsSystem
 
         var globalPos = _transform.GetWorldPosition(xform);
 
-        for (var i = 1; i <= MaxZLevelsBelowRendering; i++)
+        for (var i = 1; i <= Cfg.GetCVar(EchoCCVars.MaxZLevelsBelowRendering); i++) // ECHO-Tweak: перенос констант в конфиг
         {
             if (!TryMapOffset(map.Value, -i, out var mapUidBelow))
                 break;

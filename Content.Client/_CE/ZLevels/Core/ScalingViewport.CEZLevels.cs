@@ -7,9 +7,11 @@ using System.Numerics;
 using Content.Client._CE.ZLevels.Core;
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared._CE.ZLevels.Core.EntitySystems;
+using Content.Shared.CCVar;
 using Content.Shared.Maps;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Graphics;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -22,6 +24,7 @@ public sealed partial class ScalingViewport
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly ITileDefinitionManager _tile = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
 
     private CEClientZLevelsSystem? _zLevels;
     private SharedMapSystem? _mapSystem;
@@ -119,7 +122,7 @@ public sealed partial class ScalingViewport
         var lookUp = zLevelViewer.LookUp ? 1 : 0;
 
         var lowestDepth = 0;
-        for (var i = 0; i >= -CESharedZLevelsSystem.MaxZLevelsBelowRendering; i--)
+        for (var i = 0; i >= -_cfg.GetCVar(EchoCCVars.MaxZLevelsBelowRendering); i--)   // ECHO-Tweak: перенос констант в конфиг
         {
             var checkingMap = playerXform.MapUid.Value;
 
@@ -193,7 +196,7 @@ public sealed partial class ScalingViewport
                     continue;
 
                 Angle rotation = _fallbackEye.Rotation * -1;
-                var offset = rotation.ToWorldVec() * CEClientZLevelsSystem.ZLevelOffset * depth;
+                var offset = rotation.ToWorldVec() * _cfg.GetCVar(EchoCCVars.ZLevelOffset) * depth;
 
                 viewport.Eye = new ZEye(lowestDepth, depth, lookUp)
                 {
