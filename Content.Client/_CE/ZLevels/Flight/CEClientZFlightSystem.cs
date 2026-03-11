@@ -3,7 +3,9 @@ using Content.Client._CE.ZLevels.Core;
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared._CE.ZLevels.Flight;
 using Content.Shared._CE.ZLevels.Flight.Components;
+using Content.Shared.CCVar;
 using Robust.Client.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 
 namespace Content.Client._CE.ZLevels.Flight;
@@ -12,6 +14,7 @@ public sealed class CEClientZFlightSystem : CESharedZFlightSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak: перенос констант в конфиг
 
     public override void Update(float frameTime)
     {
@@ -28,7 +31,7 @@ public sealed class CEClientZFlightSystem : CESharedZFlightSystem
 
             var vfx = SpawnAtPosition(flyer.FlightVfx, xform.Coordinates);
 
-            _sprite.SetOffset((vfx, sprite), new Vector2(0, zPhys.LocalPosition * CEClientZLevelsSystem.ZLevelOffset) + zPhys.SpriteOffsetDefault);
+            _sprite.SetOffset((vfx, sprite), new Vector2(0, zPhys.LocalPosition * _cfg.GetCVar(EchoCCVars.ZLevelOffset)) + zPhys.SpriteOffsetDefault);  // ECHO-Tweak: перенос констант в конфиг
         }
     }
 }
