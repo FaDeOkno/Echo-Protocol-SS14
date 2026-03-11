@@ -58,7 +58,8 @@
   - type: InputMover
   - type: MobMover
   - type: MovementSpeedModifier
-  - type: LagCompensation
+  - type: SpeechBarks # ECHO-Tweak : Barks
+  - type: OfferItem # ECHO-Tweak: Добавил оффер компонент для того, чтобы сущности могли оффер делать предметов
 
 - type: entity
   save: false

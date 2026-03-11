@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Airlock
   parent: BaseStructure
   name: airlock
@@ -183,6 +183,10 @@
     - Airlocks
     - WirePanels
     - Networking
+# ECHO-Tweak-Start 
+  - type: WeldingSparksAnimation # ECHO-Tweak "Wielding Sparks Animation"
+    startingOffset: 0, 0.5
+# ECHO-Tweak-End
   placement:
     mode: SnapgridCenter
 
