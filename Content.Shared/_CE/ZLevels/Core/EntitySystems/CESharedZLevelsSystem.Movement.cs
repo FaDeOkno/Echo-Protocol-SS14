@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using System.Linq;
 using System.Numerics;
 using Content.Shared._CE.ZLevels.Core.Components;
 using Content.Shared.CCVar;
@@ -14,6 +15,7 @@ using Content.Shared.Throwing;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 
 namespace Content.Shared._CE.ZLevels.Core.EntitySystems;
@@ -36,6 +38,7 @@ public abstract partial class CESharedZLevelsSystem
     private const float ImpactVelocityLimit = 0.75f;
 
     private EntityQuery<CEZLevelHighGroundComponent> _highgroundQuery;
+    private Dictionary<EntityUid, float> _queuedLandings = new();   // ECHO-Tweak
 
     private void InitMovement()
     {
@@ -110,91 +113,25 @@ public abstract partial class CESharedZLevelsSystem
     {
         base.Update(frameTime);
 
+        _queuedLandings.Clear();    // ECHO-Tweak
+
         var query = EntityQueryEnumerator<CEZPhysicsComponent, CEActiveZPhysicsComponent, TransformComponent, PhysicsComponent>();
         while (query.MoveNext(out var uid, out var zPhys, out _, out var xform, out var physics))
         {
-            if (!_zMapQuery.HasComp(xform.MapUid))
-                continue;
-
-            var oldVelocity = zPhys.Velocity;
-            var oldHeight = zPhys.LocalPosition;
-
-            if (physics.BodyStatus == BodyStatus.OnGround)
-            {
-                //Velocity application
-                var velocityEv = new CEGetZVelocityEvent((uid, zPhys));
-                RaiseLocalEvent(uid, velocityEv);
-
-                zPhys.Velocity += velocityEv.VelocityDelta * frameTime;
-            }
-
-            //Movement application
-            zPhys.LocalPosition += zPhys.Velocity * frameTime;
-
-            if (zPhys.Velocity < 0) //Falling down
-            {
-                var distanceToGround = zPhys.LocalPosition - zPhys.CurrentGroundHeight;
-
-                if ((distanceToGround <= 0.05f || zPhys.CurrentStickyGround) && distanceToGround <= MaxStepHeight)
-                    zPhys.LocalPosition -= distanceToGround; //Sticky move
-
-                if (distanceToGround <= 0.05f) //There`s a ground
-                {
-                    if (MathF.Abs(zPhys.Velocity) >= Cfg.GetCVar(EchoCCVars.ZImpactVelocityLimit)) // ECHO-Tweak: перенос констант в конфиг
-                    {
-                        RaiseLocalEvent(uid, new CEZLevelHitEvent(-zPhys.Velocity));
-                        var land = new LandEvent(null, true);
-                        RaiseLocalEvent(uid, ref land);
-                    }
-
-                    zPhys.Velocity = -zPhys.Velocity * zPhys.Bounciness;
-                }
-            }
-
-            if (zPhys.LocalPosition < 0) //Need teleport to ZLevel down
-            {
-                if (TryMoveDownOrChasm(uid))
-                {
-                    zPhys.LocalPosition += 1;
-
-                    if (!zPhys.CurrentStickyGround)
-                    {
-                        var fallEv = new CEZLevelFallMapEvent();
-                        RaiseLocalEvent(uid, fallEv);
-                    }
-                }
-            }
-
-            if (zPhys.LocalPosition >= 1) //Need teleport to ZLevel up
-            {
-                if (HasTileAbove(uid)) //Hit roof
-                {
-                    if (MathF.Abs(zPhys.Velocity) >= Cfg.GetCVar(EchoCCVars.ZImpactVelocityLimit)) // ECHO-Tweak: перенос констант в конфиг
-                    {
-                        RaiseLocalEvent(uid, new CEZLevelHitEvent(zPhys.Velocity));
-                        var land = new LandEvent(null, true);
-                        RaiseLocalEvent(uid, ref land);
-                    }
-
-                    zPhys.LocalPosition = 1;
-                    zPhys.Velocity = -zPhys.Velocity * zPhys.Bounciness;
-                }
-                else //Move up
-                {
-                    if (TryMoveUp(uid))
-                        zPhys.LocalPosition -= 1;
-                }
-            }
-
-            if (Math.Abs(zPhys.Velocity) > ZVelocityLimit)
-                zPhys.Velocity = MathF.Sign(zPhys.Velocity) * ZVelocityLimit;
-
-            if (Math.Abs(oldVelocity - zPhys.Velocity) > 0.01f)
-                DirtyField(uid, zPhys, nameof(CEZPhysicsComponent.Velocity));
-
-            if (Math.Abs(oldHeight - zPhys.LocalPosition) > 0.01f)
-                DirtyField(uid, zPhys, nameof(CEZPhysicsComponent.LocalPosition));
+            // ECHO-Tweak: Removed old logic
+            UpdateMovement(uid, zPhys, xform, physics, frameTime);
         }
+
+        // ECHO-Tweak-start: fix exception issue
+        for (var i = _queuedLandings.Count - 1; i >= 0; i--)
+        {
+            var landing = _queuedLandings.ElementAt(i);
+
+            RaiseLocalEvent(landing.Key, new CEZLevelHitEvent(landing.Value));
+            var land = new LandEvent(null, true);
+            RaiseLocalEvent(landing.Key, ref land);
+        }
+        // ECHO-Tweak-end
     }
 
     /// <summary>
