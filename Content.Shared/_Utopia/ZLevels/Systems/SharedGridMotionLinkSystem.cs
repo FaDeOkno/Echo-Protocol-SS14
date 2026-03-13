@@ -29,6 +29,9 @@ public abstract class SharedGridMotionLinkSystem : EntitySystem
     {
         ent.Comp.Root = GetBiggestGridOfGroup(ent.Comp.GroupId);
 
+        if (ent.Comp.Root is not { Valid: true })
+            ent.Comp.Root = ent.Owner;
+
         if (ent.Comp.Root == ent.Owner)
             ent.Comp.Offset = Vector2.Zero;
         else
@@ -186,7 +189,10 @@ public abstract class SharedGridMotionLinkSystem : EntitySystem
         var biggest = new KeyValuePair<int, EntityUid>(0, EntityUid.Invalid);
         foreach (var ent in ents)
         {
-            var tilesCount = _map.GetAllTiles(ent.Owner, Comp<MapGridComponent>(ent.Owner), true).Count();
+            if (!TryComp<MapGridComponent>(ent.Owner, out var grid))
+                continue;
+
+            var tilesCount = _map.GetAllTiles(ent.Owner, grid, true).Count();
 
             if (biggest.Key < tilesCount)
                 biggest = new(tilesCount, ent.Owner);
