@@ -1,17 +1,17 @@
 using System.Numerics;
+using Content.Client.Light;
 using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
-using Content.Shared.Maps;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Map.Enumerators;
-using Robust.Shared.Physics;
+using Robust.Shared.Prototypes;
 
-namespace Content.Client.Light;
+namespace Content.Client._Echo.Postprocessing;
 
-public sealed class RoofOverlay : Overlay
+public sealed class ZLevelLightOverlay : Overlay
 {
     private readonly IEntityManager _entManager;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -24,11 +24,11 @@ public sealed class RoofOverlay : Overlay
 
     private List<Entity<MapGridComponent>> _grids = new();
 
-    public override OverlaySpace Space => OverlaySpace.BeforeLighting;
+    public override OverlaySpace Space => OverlaySpace.WorldSpace;
+    public override bool RequestScreenTexture => true;
+    public const int ContentZIndex = RoofOverlay.ContentZIndex - 1;
 
-    public const int ContentZIndex = BeforeLightTargetOverlay.ContentZIndex + 2;    // ECHO-Tweak: 1 -> 2
-
-    public RoofOverlay(IEntityManager entManager)
+    public ZLevelLightOverlay(IEntityManager entManager)
     {
         _entManager = entManager;
         IoCManager.InjectDependencies(this);
