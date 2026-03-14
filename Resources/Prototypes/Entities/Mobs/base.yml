@@ -38,6 +38,11 @@
   - type: MindContainer
   - type: RequireProjectileTarget
     active: False
+  # ECHO-Tweak-start
+  - type: CEZPhysics
+  - type: CEZLevelViewer
+    lookUp: true
+  # ECHO-Tweak-end
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
@@ -53,7 +58,8 @@
   - type: InputMover
   - type: MobMover
   - type: MovementSpeedModifier
-  - type: LagCompensation
+  - type: SpeechBarks # ECHO-Tweak : Barks
+  - type: OfferItem # ECHO-Tweak: Добавил оффер компонент для того, чтобы сущности могли оффер делать предметов
 
 - type: entity
   save: false

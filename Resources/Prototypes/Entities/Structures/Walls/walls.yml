@@ -55,6 +55,11 @@
     resistance: 2
   - type: BlockWeather
   - type: SunShadowCast
+  # ECHO-Tweak-start: Z-levels
+  - type: CEZPhysics
+  - type: CEZLevelHighGround
+    fixtureId: fix1
+  # ECHO-Tweak-end
 
 - type: entity
   abstract: true
@@ -589,9 +594,9 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Walls/solid.rsi # PE-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
+    sprite: _ECHO/Structures/Walls/solid.rsi # ECHO-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
   - type: Icon
-    sprite: _ECHO/Structures/Walls/solid.rsi # PE-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
+    sprite: _ECHO/Structures/Walls/solid.rsi # ECHO-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -981,13 +986,13 @@
   name: solid wall
   components:
   - type: Sprite
-    sprite: _ECHO/Structures/Walls/solid.rsi # PE-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
+    sprite: _ECHO/Structures/Walls/solid.rsi # ECHO-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: _ECHO/Structures/Walls/solid.rsi # PE-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
+    sprite: _ECHO/Structures/Walls/solid.rsi # ECHO-Tweak Было: Structures/Walls/solid.rsi -> Стало: _ECHO/Structures/Walls/solid.rsi
   - type: RCDDeconstructable
     cost: 6
     delay: 8
