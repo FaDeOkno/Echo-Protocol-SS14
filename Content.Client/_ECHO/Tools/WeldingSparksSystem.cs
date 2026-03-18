@@ -27,11 +27,11 @@ public sealed class WeldingSparksSystem : SharedWeldingSparksSystem
     {
         base.Initialize();
 
-        SubscribeNetworkEvent<SpawnedWeldingSparksEvent>(OnSpawnedWeldingSparks);
+        SubscribeNetworkEvent<SpawnWeldingSparksEvent>(OnSpawnWeldingSparks);
         SubscribeNetworkEvent<StopWeldingSparksEvent>(OnStopWeldingSparks);
     }
 
-    private void OnSpawnedWeldingSparks(SpawnedWeldingSparksEvent ev)
+    private void OnSpawnWeldingSparks(SpawnWeldingSparksEvent ev)
     {
         if (!TryGetEntity(ev.TargetEnt, out var targetEnt) ||
             !TryGetEntity(ev.Tool, out var tool))

@@ -13,7 +13,7 @@ public sealed class WeldingSparksSystem : SharedWeldingSparksSystem
             return;
 
         var filter = Filter.PvsExcept(user);
-        var ev = new SpawnedWeldingSparksEvent(GetNetEntity(ent.Owner), GetNetEntity(target.Value), GetNetCoordinates(spawnLoc), id.Index, duration);
+        var ev = new SpawnWeldingSparksEvent(GetNetEntity(ent.Owner), GetNetEntity(target.Value), GetNetCoordinates(spawnLoc), id.Index, duration);
         RaiseNetworkEvent(ev, filter);
     }
 
