@@ -40,9 +40,9 @@ public sealed class BiomePreloadSystem : EntitySystem
     [AdminCommand(AdminFlags.Mapping)]
     private void GenerateCommand(IConsoleShell shell, string argStr, string[] args)
     {
-        if (args.Length < 7)
+        if (args.Length < 4)
         {
-            shell.WriteError(Loc.GetString("cmd-weather-error-no-arguments"));
+            shell.WriteError(Loc.GetString("cmd-planet-limited-arguments"));
             return;
         }
 
@@ -63,16 +63,19 @@ public sealed class BiomePreloadSystem : EntitySystem
 
         if (!_proto.TryIndex<BiomeTemplatePrototype>(args[1], out var proto))
         {
+            shell.WriteError(Loc.GetString($"cmd-planet-map-prototype", ("prototype", args[1])));
             return;
         }
 
         if (!int.TryParse(args[2], out var sizeX))
         {
+            shell.WriteError(Loc.GetString($"cmd-parse-failure-integer", ("prototype", args[1])));
             return;
         }
 
         if (!int.TryParse(args[3], out var sizeY))
         {
+            shell.WriteError(Loc.GetString($"cmd-parse-failure-integer", ("prototype", args[1])));
             return;
         }
 
@@ -124,7 +127,6 @@ public sealed class BiomePreloadSystem : EntitySystem
                                   ProtoId<BiomeTemplatePrototype> biomeTemplate,
                                   string? limitingEntity = null,
                                   int? seed = null,
-                                  MetaDataComponent? metadata = null,
                                   Color? mapLight = null)
     {
         EnsureComp<MapGridComponent>(mapUid);
@@ -132,7 +134,9 @@ public sealed class BiomePreloadSystem : EntitySystem
         var comp = EnsureComp<BiomePreloadComponent>(mapUid);
         comp.Biome = biomeTemplate;
         comp.LoadedBox = scale;
-        comp.Seed = seed ?? _random.Next();
+
+        if (comp.Seed == 0)
+            comp.Seed = seed ?? _random.Next();
 
         Generate(mapUid, offset, limitingEntity);
 
@@ -143,7 +147,7 @@ public sealed class BiomePreloadSystem : EntitySystem
         // Lava: #A34931
         var light = EnsureComp<MapLightComponent>(mapUid);
         light.AmbientLightColor = mapLight ?? Color.FromHex("#D8B059");
-        Dirty(mapUid, light, metadata);
+        Dirty(mapUid, light);
 
         EnsureComp<RoofComponent>(mapUid);
 
