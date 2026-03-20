@@ -93,6 +93,7 @@ public sealed class BiomePreloadSystem : EntitySystem
             pos.Y = y;
 
         CreateAndGenerate(mapUid, new(sizeX, sizeY), pos, args[1], limitingEnt);
+        shell.WriteLine(Loc.GetString($"cmd-planet-limited-success", ("mapId", args[0])));
     }
 
     private CompletionResult CommandCompletion(IConsoleShell shell, string[] args)
