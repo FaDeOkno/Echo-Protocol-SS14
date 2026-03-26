@@ -153,6 +153,12 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        /// <summary>
+        /// ECHO-Tweak: Аккаунты для компьютеров
+        /// </summary>
+        [DataField]
+        public string? ComputerAccess;
     }
 
     /// <summary>
