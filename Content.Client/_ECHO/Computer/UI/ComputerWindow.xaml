@@ -1,0 +1,29 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    MinSize="800 800"
+    Resizable="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Name="ProgramList" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="13"/>
+        <BoxContainer Name="ProgramRoot" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="13">
+            <PanelContainer Name="ProgramNamePanel" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="1">
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+                    <RichTextLabel Name="ProgramName" HorizontalAlignment="Left" Margin="4"/>
+                    <Button Name="CloseProgramButton" Text="x" HorizontalAlignment="Right" Margin="4"/>
+                </BoxContainer>
+            </PanelContainer>
+            <BoxContainer Name="ProgramContainer" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="5"/>
+        </BoxContainer>
+        <PanelContainer HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="1">
+            <BoxContainer Name="FooterButtons" HorizontalExpand="True" VerticalExpand="True">
+                <Control HorizontalExpand="True" Margin="4">
+                    <Button Name="TurnOffButton" HorizontalAlignment="Left"/>
+                </Control>
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="4">
+                    <RichTextLabel Name="TimeLabel" HorizontalAlignment="Right"/>
+                    <RichTextLabel Name="DateLabel" HorizontalAlignment="Right"/>
+                </BoxContainer>
+            </BoxContainer>
+        </PanelContainer>
+    </BoxContainer>
+</controls:FancyWindow>
