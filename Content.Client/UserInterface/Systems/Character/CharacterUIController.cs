@@ -130,7 +130,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName) = data;
+        var (entity, job, objectives, memory, briefing, entityName) = data; // ECHO-Tweak: memory added
 
         _window.SpriteView.SetEntity(entity);
 
