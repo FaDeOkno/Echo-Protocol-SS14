@@ -127,7 +127,7 @@ public static class StyleBoxHelpers
     {
         var baseBox = new StyleBoxTexture
         {
-            Texture = sheet.GetTextureOr(sheet.BaseButtonPath, NanotrasenStylesheet.TextureRoot),
+            Texture = sheet.GetTextureOr(sheet.RoundedButtonBorderedPath, NanotrasenStylesheet.TextureRoot),    // ECHO-Tweak: BaseButtonPath -> RoundedButtonBorderedPath
         };
         baseBox.SetPatchMargin(StyleBox.Margin.All, 10);
         baseBox.SetPadding(StyleBox.Margin.All, 1);
