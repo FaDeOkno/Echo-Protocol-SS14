@@ -61,7 +61,7 @@
           False: { visible: false }
   - type: ItemTogglePointLight
   - type: Appearance
-  - type: PC
+
   - type: CartridgeLoader
     uiKey: enum.PCBoundUiKey.Key
     preinstalled:
@@ -77,6 +77,12 @@
       whitelist:
         components:
           - Cartridge
+  - type: ContainerContainer
+    containers:
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+
+  - type: PC
   - type: ActivatableUI
     key: enum.PCBoundUiKey.Key
     singleUser: true
