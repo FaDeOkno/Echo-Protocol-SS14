@@ -9,6 +9,7 @@ using Content.Shared._ECHO.Extensions;
 using System.Text;
 using Content.Server.Mind;
 using Content.Shared.Roles;
+using Robust.Shared.Containers;
 
 namespace Content.Server._ECHO.Computer;
 
@@ -25,8 +26,6 @@ public sealed class PCSystem : SharedPCSystem
     public const string UsernameMindMemoryKey = "computers-username";
     public const string PasswordMindMemoryKey = "computers-password";
 
-    private const int CurrentYear = 1984;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -34,6 +33,10 @@ public sealed class PCSystem : SharedPCSystem
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRestartCleanup);
+
+        SubscribeLocalEvent<PCComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<PCComponent, EntInsertedIntoContainerMessage>(OnContainerInsert);
+        SubscribeLocalEvent<PCComponent, EntRemovedFromContainerMessage>(OnContainerRemove);
     }
 
     private void OnRoundStart(RoundStartingEvent args)
@@ -82,9 +85,19 @@ public sealed class PCSystem : SharedPCSystem
         LocalUsers.Clear();
     }
 
-    private void OnCartridgeLoaded(Entity<PCComponent> ent, ref CartridgeAddedEvent args)
+    private void OnMapInit(Entity<PCComponent> ent, ref MapInitEvent args)
     {
+        UpdateUi(ent);
+    }
 
+    private void OnContainerInsert(Entity<PCComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        UpdateUi(ent);
+    }
+
+    private void OnContainerRemove(Entity<PCComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        UpdateUi(ent);
     }
 
     private string GeneratePassword(ComputerAccessPrototype localAccess)
