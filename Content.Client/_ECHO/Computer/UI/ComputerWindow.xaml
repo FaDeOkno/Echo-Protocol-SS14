@@ -1,29 +1,120 @@
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-    MinSize="800 800"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    Title="{Loc 'computer-window-title'}"
+    MinSize="600 600"
+    MaxSize="800 800"
     Resizable="True">
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
-        <BoxContainer Name="ProgramList" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="13"/>
-        <BoxContainer Name="ProgramRoot" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="13">
-            <PanelContainer Name="ProgramNamePanel" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="1">
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
-                    <RichTextLabel Name="ProgramName" HorizontalAlignment="Left" Margin="4"/>
-                    <Button Name="CloseProgramButton" Text="x" HorizontalAlignment="Right" Margin="4"/>
+    <BoxContainer
+        Margin="1 4 0 1"
+        HorizontalExpand="True"
+        Orientation="Vertical"
+        VerticalExpand="True">
+
+        <PanelContainer Name="ProgramContainerRoot" Margin="4 0 0 0" VerticalExpand="True" HorizontalExpand="True" RectClipContent="True" SizeFlagsStretchRatio="13">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
+            </PanelContainer.PanelOverride>
+            <TextureRect
+                Stretch="KeepAspectCovered"
+                CanShrink="True"
+                RectClipContent="True"
+                TexturePath="/Textures/_ECHO/Interface/computer_wallpaper.png"
+                TextureScale="1 1"
+                HorizontalExpand="True"
+                VerticalExpand="True" />
+            <GridContainer
+                Name="ProgramList"
+                Margin="4"
+                Columns="4"
+                HorizontalAlignment="Center"
+                HorizontalExpand="True"
+                VerticalExpand="True" />
+        </PanelContainer>
+
+        <BoxContainer
+            Name="ProgramRoot"
+            HorizontalExpand="True"
+            Orientation="Vertical"
+            SizeFlagsStretchRatio="13"
+            VerticalExpand="True">
+            <PanelContainer
+                Name="ProgramNamePanel"
+                HorizontalExpand="True"
+                SizeFlagsStretchRatio="1"
+                VerticalExpand="True">
+                <BoxContainer
+                    HorizontalExpand="True"
+                    Orientation="Horizontal"
+                    VerticalExpand="True">
+                    <RichTextLabel
+                        Name="ProgramName"
+                        Margin="4"
+                        HorizontalAlignment="Left" />
+                    <Button
+                        Name="CloseProgramButton"
+                        Margin="4"
+                        HorizontalAlignment="Right"
+                        SetSize="46 46"
+                        Text="x" />
                 </BoxContainer>
             </PanelContainer>
-            <BoxContainer Name="ProgramContainer" HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="5"/>
+            <BoxContainer
+                Name="ProgramContainer"
+                HorizontalExpand="True"
+                SizeFlagsStretchRatio="5"
+                VerticalExpand="True" />
         </BoxContainer>
-        <PanelContainer HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="1">
-            <BoxContainer Name="FooterButtons" HorizontalExpand="True" VerticalExpand="True">
-                <Control HorizontalExpand="True" Margin="4">
-                    <Button Name="TurnOffButton" HorizontalAlignment="Left"/>
-                </Control>
-                <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="4">
-                    <RichTextLabel Name="TimeLabel" HorizontalAlignment="Right"/>
-                    <RichTextLabel Name="DateLabel" HorizontalAlignment="Right"/>
+
+        <PanelContainer
+            Margin="4"
+            HorizontalExpand="True"
+            SizeFlagsStretchRatio="1"
+            VerticalExpand="True">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#0a0a0a" />  <!-- #161616 -->
+            </PanelContainer.PanelOverride>
+            <PanelContainer
+                Margin="4"
+                HorizontalExpand="True"
+                VerticalExpand="True">
+                <BoxContainer
+                    Name="FooterButtons"
+                    HorizontalExpand="True"
+                    VerticalExpand="True">
+                    <Control HorizontalExpand="True">
+                        <Button
+                            Name="TurnOffButton"
+                            HorizontalAlignment="Left">
+                            <TextureRect Stretch="KeepAspectCentered"
+                                         TexturePath="/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png"
+                                         TextureScale="0.5 0.5"/>
+                        </Button>
+                    </Control>
+                    <BoxContainer
+                        Margin="4,0"
+                        HorizontalAlignment="Right"
+                        HorizontalExpand="True"
+                        Orientation="Horizontal"
+                        VerticalExpand="True">
+                        <TextureRect VerticalAlignment="Bottom"
+                                    Margin="12 4"
+                                    Stretch="KeepAspectCentered"
+                                    TexturePath="/Textures/_ECHO/Interface/network.png"
+                                    TextureScale="0.055 0.055"/>
+                        <BoxContainer
+                            HorizontalExpand="True"
+                            Orientation="Vertical"
+                            VerticalExpand="True">
+                            <RichTextLabel Name="TimeLabel" HorizontalAlignment="Center" />
+                            <RichTextLabel Name="DateLabel" HorizontalAlignment="Right" />
+                        </BoxContainer>
+                    </BoxContainer>
+
                 </BoxContainer>
-            </BoxContainer>
+            </PanelContainer>
         </PanelContainer>
+
     </BoxContainer>
 </controls:FancyWindow>
