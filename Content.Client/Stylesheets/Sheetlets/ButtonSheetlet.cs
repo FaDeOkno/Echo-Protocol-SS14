@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client.Resources;
 using Content.Client.Stylesheets.Palette;
 using Content.Client.Stylesheets.SheetletConfigs;
 using Content.Client.Stylesheets.Stylesheets;
@@ -66,11 +67,15 @@ public sealed class ButtonSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
             E<Label>()
                 // ReSharper disable once AccessToStaticMemberViaDerivedType
                 .Class(Button.StyleClassButton)
-                .AlignMode(Label.AlignMode.Center),
+                .AlignMode(Label.AlignMode.Center)
+                .Font(ResCacheExtension.NotoStack(ResCache, size: 12)),  // ECHO-Tweak: замена шрифтов
 
             // Have disabled button's text be faded
             CButton().PseudoDisabled().ParentOf(E<Label>()).FontColor(Color.FromHex("#E5E5E581")),
             CButton().PseudoDisabled().ParentOf(E()).ParentOf(E<Label>()).FontColor(Color.FromHex("#E5E5E581")),
+
+            // ECHO-Tweak: небольшое смещение
+            CButton().ParentOf(E()).Margin(new Thickness(2, 0, 0, 2)),
         };
         // Texture button modulation
         MakeButtonRules<TextureButton>(rules, Palettes.AlphaModulate, null);
