@@ -3,6 +3,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Timing;
 
 namespace Content.Client._ECHO.Computer.UI;
 
@@ -12,5 +13,10 @@ public sealed partial class ComputerProgramItem : Control
     public ComputerProgramItem()
     {
         RobustXamlLoader.Load(this);
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        HoverPanel.Visible = OpenButton.IsHovered;
     }
 }
