@@ -1,4 +1,5 @@
 using Content.Shared.CartridgeLoader;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._ECHO.Computer;
@@ -6,13 +7,26 @@ namespace Content.Shared._ECHO.Computer;
 [Serializable, NetSerializable]
 public sealed partial class PCBoundUserInterfaceState : CartridgeLoaderUiState
 {
-    public bool Enabled;
+    public ComputerLoginData? Login;
 
-    public PCBoundUserInterfaceState(bool enabled, NetEntity? activeUi, List<NetEntity> programs) : base(programs, activeUi)
+    public PCBoundUserInterfaceState(ComputerLoginData? login, NetEntity? activeUi, List<NetEntity> programs) : base(programs, activeUi)
     {
-        Enabled = enabled;
+        Login = login;
     }
 }
+
+public sealed class ComputerLoginData
+{
+    public string Username;
+    public ProtoId<ComputerAccessPrototype> AccessLevel;
+
+    public ComputerLoginData(string username, ProtoId<ComputerAccessPrototype> accessLevel)
+    {
+        Username = username;
+        AccessLevel = accessLevel;
+    }
+}
+
 
 [Serializable, NetSerializable]
 public enum PCBoundUiKey : byte

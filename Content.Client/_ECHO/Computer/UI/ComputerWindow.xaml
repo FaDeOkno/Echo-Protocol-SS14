@@ -4,13 +4,57 @@
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'computer-window-title'}"
     MinSize="600 600"
+    SetSize="800 800"
     MaxSize="800 800"
-    Resizable="True">
+    Resizable="False">
     <BoxContainer
         Margin="1 4 0 1"
         HorizontalExpand="True"
         Orientation="Vertical"
         VerticalExpand="True">
+
+        <PanelContainer Name="UserContainerRoot" Margin="4 0 0 0" VerticalExpand="True" HorizontalExpand="True" RectClipContent="True" SizeFlagsStretchRatio="13">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
+            </PanelContainer.PanelOverride>
+            <TextureRect
+                Stretch="KeepAspectCovered"
+                CanShrink="True"
+                RectClipContent="True"
+                TexturePath="/Textures/_ECHO/Interface/computer_wallpaper.png"
+                TextureScale="1 1"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                ModulateSelfOverride="#636363" />
+            <BoxContainer
+                Name="LoginContainer"
+                Margin="4"
+                Orientation="Vertical"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalExpand="True"
+                VerticalExpand="True">
+                <TextureRect
+                    Stretch="KeepAspectCentered"
+                    CanShrink="True"
+                    RectClipContent="True"
+                    TexturePath="/Textures/_ECHO/Interface/computer_wallpaper.png"
+                    TextureScale="1 1" />
+                <BoxContainer Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                    <BoxContainer Orientation="Vertical" Margin="4 0">
+                        <RichTextLabel Name="LoginLabel" Margin="0 4"/>
+                        <RichTextLabel Name="PasswordLabel" Margin="0 4"/>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Vertical" Margin="4 0">
+                        <LineEdit Name="LoginLineEdit" Margin="0 4"/>
+                        <LineEdit Name="PasswordLineEdit" Margin="0 4" PasswordChar="*"/>
+                    </BoxContainer>
+                </BoxContainer>
+
+            </BoxContainer>
+        </PanelContainer>
 
         <PanelContainer Name="ProgramContainerRoot" Margin="4 0 0 0" VerticalExpand="True" HorizontalExpand="True" RectClipContent="True" SizeFlagsStretchRatio="13">
             <PanelContainer.PanelOverride>
@@ -38,12 +82,14 @@
             HorizontalExpand="True"
             Orientation="Vertical"
             SizeFlagsStretchRatio="13"
-            VerticalExpand="True">
+            VerticalExpand="True"
+            Visible="False">
             <PanelContainer
                 Name="ProgramNamePanel"
                 HorizontalExpand="True"
                 SizeFlagsStretchRatio="1"
-                VerticalExpand="True">
+                VerticalExpand="True"
+                Margin="4 0 4 4">
                 <BoxContainer
                     HorizontalExpand="True"
                     Orientation="Horizontal"
@@ -52,6 +98,7 @@
                         Name="ProgramName"
                         Margin="4"
                         HorizontalAlignment="Left" />
+                    <Control HorizontalExpand="True"/>
                     <Button
                         Name="CloseProgramButton"
                         Margin="4"

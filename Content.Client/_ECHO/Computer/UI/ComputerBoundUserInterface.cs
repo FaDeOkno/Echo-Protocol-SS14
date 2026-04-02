@@ -1,4 +1,5 @@
 using Content.Client.CartridgeLoader;
+using Content.Shared._ECHO.Computer;
 using Content.Shared.CartridgeLoader;
 using Robust.Client.UserInterface;
 
@@ -14,11 +15,10 @@ public sealed partial class ComputerBoundUserInterface : CartridgeLoaderBoundUse
 
     protected override void Open()
     {
-        base.Open();
+        if (_menu != null)
+            return;
 
         _menu = this.CreateWindow<ComputerWindow>();
-
-        _menu.SetOpenedWindow(null, null);
 
         _menu.OnProgramItemPressed += ActivateCartridge;
         _menu.OnInstallButtonPressed += InstallCartridge;
@@ -26,11 +26,29 @@ public sealed partial class ComputerBoundUserInterface : CartridgeLoaderBoundUse
         _menu.OnCloseItemPressed += DeactivateActiveCartridge;
 
         _menu.OpenCentered();
+
+        base.Open();
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        if (state is not PCBoundUserInterfaceState computerState)
+            return;
+
+        if (computerState.Login != null)
+            _menu?.Login(computerState.Login);
+        else
+            _menu?.Logout();
     }
 
     protected override void AttachCartridgeUI(Control cartridgeUIFragment, string? title)
     {
-        _menu?.SetOpenedWindow(cartridgeUIFragment, title);
+        if (_menu is null)
+            return;
+
+        _menu.SetOpenedWindow(cartridgeUIFragment, title);
     }
 
     protected override void DetachCartridgeUI(Control cartridgeUIFragment)

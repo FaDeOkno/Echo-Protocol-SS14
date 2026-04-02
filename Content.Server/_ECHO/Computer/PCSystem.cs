@@ -37,6 +37,8 @@ public sealed class PCSystem : SharedPCSystem
         SubscribeLocalEvent<PCComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<PCComponent, EntInsertedIntoContainerMessage>(OnContainerInsert);
         SubscribeLocalEvent<PCComponent, EntRemovedFromContainerMessage>(OnContainerRemove);
+
+        SubscribeLocalEvent<PCComponent, BoundUIOpenedEvent>(OnUiOpen);
     }
 
     private void OnRoundStart(RoundStartingEvent args)
@@ -96,6 +98,11 @@ public sealed class PCSystem : SharedPCSystem
     }
 
     private void OnContainerRemove(Entity<PCComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        UpdateUi(ent);
+    }
+
+    private void OnUiOpen(Entity<PCComponent> ent, ref BoundUIOpenedEvent args)
     {
         UpdateUi(ent);
     }
