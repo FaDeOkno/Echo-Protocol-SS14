@@ -1,5 +1,6 @@
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 
 namespace Content.Shared._ECHO.Computer;
@@ -15,6 +16,7 @@ public abstract class SharedPCSystem : EntitySystem
 
         SubscribeLocalEvent<PCComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<PCComponent, ItemToggledEvent>(OnToggled);
+        SubscribeLocalEvent<PCComponent, ActivatableUIOpenAttemptEvent>(OnOpenUiAttempt);
     }
 
     private void OnGetVerbs(Entity<PCComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -29,12 +31,20 @@ public abstract class SharedPCSystem : EntitySystem
 
     private void OnToggled(Entity<PCComponent> ent, ref ItemToggledEvent args)
     {
+        ent.Comp.CurrentUser = null;
         UpdateUi(ent);
     }
 
-    public void ToggleComputer(Entity<PCComponent> ent, EntityUid user)
+    private void OnOpenUiAttempt(Entity<PCComponent> ent, ref ActivatableUIOpenAttemptEvent args)
+    {
+        if (!Toggle.IsActivated(ent.Owner))
+            args.Cancel();
+    }
+
+    public void ToggleComputer(Entity<PCComponent> ent, EntityUid? user)
     {
         Toggle.Toggle(ent.Owner, user);
+        UI.CloseUis(ent.Owner);
     }
 
     public virtual void UpdateUi(Entity<PCComponent> ent)

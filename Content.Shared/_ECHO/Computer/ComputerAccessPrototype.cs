@@ -10,8 +10,8 @@ public sealed partial class ComputerAccessPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField(required: true)]
-    public ProtoId<LocalizedDatasetPrototype>? Names;
+    [DataField]
+    public ProtoId<LocalizedDatasetPrototype>? Names = null;
 
     [DataField(required: true)]
     public ProtoId<LocalizedDatasetPrototype> PasswordKeywords;

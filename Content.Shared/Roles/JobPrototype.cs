@@ -1,3 +1,4 @@
+using Content.Shared._ECHO.Computer;
 using Content.Shared.Access;
 using Content.Shared.Guidebook;
 using Content.Shared.Players.PlayTimeTracking;
@@ -158,7 +159,7 @@ namespace Content.Shared.Roles
         /// ECHO-Tweak: Аккаунты для компьютеров
         /// </summary>
         [DataField]
-        public string? ComputerAccess;
+        public ProtoId<ComputerAccessPrototype>? ComputerAccess = "Generic";
     }
 
     /// <summary>

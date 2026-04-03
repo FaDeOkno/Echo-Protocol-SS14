@@ -10,6 +10,7 @@ using System.Text;
 using Content.Server.Mind;
 using Content.Shared.Roles;
 using Robust.Shared.Containers;
+using Content.Shared.Players;
 
 namespace Content.Server._ECHO.Computer;
 
@@ -39,6 +40,9 @@ public sealed class PCSystem : SharedPCSystem
         SubscribeLocalEvent<PCComponent, EntRemovedFromContainerMessage>(OnContainerRemove);
 
         SubscribeLocalEvent<PCComponent, BoundUIOpenedEvent>(OnUiOpen);
+        SubscribeLocalEvent<PCComponent, PCLoginUiMessage>(OnLogin);
+        SubscribeLocalEvent<PCComponent, PCLogOutMessage>(OnLogOut);
+        SubscribeLocalEvent<PCComponent, PCTurnOffMessage>(OnTurnOff);
     }
 
     private void OnRoundStart(RoundStartingEvent args)
@@ -74,10 +78,10 @@ public sealed class PCSystem : SharedPCSystem
         var dat = new ComputerUserData($"{name}{_random.Next(10, 99)}", GeneratePassword(access));
         GlobalUsers.Add(dat, access.ID);
 
-        if (_mind.TryGetMind(args.Mob, out _, out var mind))
+        if (_mind.TryGetMind(args.Player, out _, out var mind))
         {
             mind.Memory[UsernameMindMemoryKey] = Loc.GetString("computer-username-memory", ("name", dat.Username));
-            mind.Memory[PasswordMindMemoryKey] = Loc.GetString("computer-password-memory", ("password", dat.Username));
+            mind.Memory[PasswordMindMemoryKey] = Loc.GetString("computer-password-memory", ("password", dat.Password));
         }
     }
 
@@ -107,9 +111,38 @@ public sealed class PCSystem : SharedPCSystem
         UpdateUi(ent);
     }
 
+    private void OnLogin(Entity<PCComponent> ent, ref PCLoginUiMessage args)
+    {
+        var userData = new ComputerUserData(args.Username, args.Password);
+
+        if (GlobalUsers.TryGetValue(userData, out var globalAccess))
+        {
+            ent.Comp.CurrentUser = new(args.Username, globalAccess);
+        }
+
+        else if (LocalUsers.TryGetValue(userData, out var localAccess) && ent.Comp.AllowedLocalUsers.Contains(localAccess))
+        {
+            ent.Comp.CurrentUser = new(args.Username, localAccess);
+        }
+
+        UpdateUi(ent);
+    }
+
+    private void OnLogOut(Entity<PCComponent> ent, ref PCLogOutMessage args)
+    {
+        ent.Comp.CurrentUser = null;
+        UpdateUi(ent);
+    }
+
+    private void OnTurnOff(Entity<PCComponent> ent, ref PCTurnOffMessage args)
+    {
+        ToggleComputer(ent, null);
+        UpdateUi(ent);
+    }
+
     private string GeneratePassword(ComputerAccessPrototype localAccess)
     {
-        var keyword = _random.Pick(_proto.Index(localAccess.PasswordKeywords).Values);
+        var keyword = Loc.GetString(_random.Pick(_proto.Index(localAccess.PasswordKeywords).Values));
         StringBuilder sb = new();
 
         var doUnderline = _random.Prob(.5f);
@@ -136,7 +169,7 @@ public sealed class PCSystem : SharedPCSystem
         if (!TryComp<CartridgeLoaderComponent>(ent.Owner, out var loader))
             return;
 
-        var state = new PCBoundUserInterfaceState(Toggle.IsActivated(ent.Owner), GetNetEntity(loader.ActiveProgram), _cartridgeLoader.GetAvailablePrograms(ent.Owner));
+        var state = new PCBoundUserInterfaceState(ent.Comp.CurrentUser, GetNetEntity(loader.ActiveProgram), _cartridgeLoader.GetAvailablePrograms(ent.Owner));
         UI.SetUiState(ent.Owner, PCBoundUiKey.Key, state);
     }
 }
