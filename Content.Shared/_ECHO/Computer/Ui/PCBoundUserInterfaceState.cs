@@ -15,6 +15,7 @@ public sealed partial class PCBoundUserInterfaceState : CartridgeLoaderUiState
     }
 }
 
+[NetSerializable, Serializable]
 public sealed class ComputerLoginData
 {
     public string Username;
