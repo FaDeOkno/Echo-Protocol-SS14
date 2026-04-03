@@ -16,7 +16,7 @@
                 </BoxContainer>
             </BoxContainer>
             <!-- ECHO-Tweak-start: память для хранения раундстартовых данных -->
-            <BoxContainer Name="MemoryBox">
+            <BoxContainer Name="MemoryBox" Orientation="Vertical" Access="Public">
                 <Label Name="MemoryLabel" Access="Public" Text="{Loc 'character-info-memory-label'}" HorizontalAlignment="Center"/>
                 <BoxContainer Orientation="Vertical" Name="Memory" Access="Public"/>
             </BoxContainer>

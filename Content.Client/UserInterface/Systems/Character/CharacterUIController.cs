@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
+using Content.Client.Message;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
@@ -131,6 +132,20 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         }
 
         var (entity, job, objectives, memory, briefing, entityName) = data; // ECHO-Tweak: memory added
+
+        // ECHO-Tweak-start: память
+        _window.Memory.RemoveAllChildren();
+        foreach (var item in memory)
+        {
+            var label = new RichTextLabel();
+            label.SetMarkup(item);
+
+            _window.Memory.AddChild(label);
+        }
+
+        if (memory.Count <= 0)
+            _window.MemoryBox.Visible = false;
+        // ECHO-Tweak-end
 
         _window.SpriteView.SetEntity(entity);
 
