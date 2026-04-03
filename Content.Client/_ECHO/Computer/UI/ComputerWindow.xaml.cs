@@ -25,6 +25,9 @@ public sealed partial class ComputerWindow : FancyWindow
     public event Action? OnCloseItemPressed;
     public event Action<EntityUid>? OnUninstallButtonPressed;
     public event Action<EntityUid>? OnInstallButtonPressed;
+    public event Action<string, string>? OnLoginButtonPressed;
+    public event Action? OnLogOutButtonPressed;
+    public event Action? TurnOffComputer;
 
     private ComputerLoginData? _loginData;
     private bool _programOpen;
@@ -38,6 +41,10 @@ public sealed partial class ComputerWindow : FancyWindow
 
         _gameTicker = _entitySystem.GetEntitySystem<ClientGameTicker>();
         CloseProgramButton.OnPressed += _ => OnCloseItemPressed?.Invoke();
+
+        LoginButton.OnPressed += _ => OnLoginButtonPressed?.Invoke(LoginLineEdit.Text, PasswordLineEdit.Text);
+        LogOutButton.OnPressed += _ => OnLogOutButtonPressed?.Invoke();
+        TurnOffButton.OnPressed += _ => TurnOffComputer?.Invoke();
     }
 
     public void Login(ComputerLoginData loginData)
@@ -90,11 +97,6 @@ public sealed partial class ComputerWindow : FancyWindow
         }
     }
 
-    public void UpdateTime()
-    {
-
-    }
-
     private void AddProgramItem(Entity<CartridgeComponent> cartridge)
     {
         var item = new ComputerProgramItem();
@@ -127,6 +129,8 @@ public sealed partial class ComputerWindow : FancyWindow
 
     private void UpdateOpenedProgram()
     {
+        LogOutButton.Disabled = _loginData == null;
+
         if (_loginData == null)
         {
             ProgramContainerRoot.Visible = false;
@@ -150,8 +154,9 @@ public sealed partial class ComputerWindow : FancyWindow
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
-
-        TimeLabel.SetMessage(_gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan).ToString("hh\\:mm"));
-        DateLabel.SetMarkup($"{DateTime.Now.ToString("dd.MM")}.{PCSystem.CurrentYear}");
+        var curRoundTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+        var time = new DateTime(PCSystem.CurrentYear, DateTime.Now.Month, DateTime.Now.Day, 12, 0, 0).AddMinutes(curRoundTime.TotalMinutes);
+        TimeLabel.SetMessage(time.ToString("hh\\:mm"));
+        DateLabel.SetMarkup(time.ToString("dd.MM.yyyy"));
     }
 }

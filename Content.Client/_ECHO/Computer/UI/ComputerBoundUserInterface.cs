@@ -24,6 +24,9 @@ public sealed partial class ComputerBoundUserInterface : CartridgeLoaderBoundUse
         _menu.OnInstallButtonPressed += InstallCartridge;
         _menu.OnUninstallButtonPressed += UninstallCartridge;
         _menu.OnCloseItemPressed += DeactivateActiveCartridge;
+        _menu.OnLoginButtonPressed += SendLogin;
+        _menu.OnLogOutButtonPressed += LogOut;
+        _menu.TurnOffComputer += () => SendMessage(new PCTurnOffMessage());
 
         _menu.OpenCentered();
 
@@ -62,5 +65,17 @@ public sealed partial class ComputerBoundUserInterface : CartridgeLoaderBoundUse
     protected override void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)
     {
         _menu?.UpdateAvailablePrograms(programs);
+    }
+
+    private void SendLogin(string username, string password)
+    {
+        var message = new PCLoginUiMessage(username, password);
+        SendMessage(message);
+    }
+
+    private void LogOut()
+    {
+        var message = new PCLogOutMessage();
+        SendMessage(message);
     }
 }

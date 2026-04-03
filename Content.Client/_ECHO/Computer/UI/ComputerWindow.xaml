@@ -36,23 +36,23 @@
                 VerticalExpand="True">
                 <TextureRect
                     Stretch="KeepAspectCentered"
-                    CanShrink="True"
                     RectClipContent="True"
-                    TexturePath="/Textures/_ECHO/Interface/computer_wallpaper.png"
-                    TextureScale="1 1" />
-                <BoxContainer Orientation="Horizontal"
+                    TexturePath="/Textures/Interface/VerbIcons/sentient.svg.192dpi.png"
+                    TextureScale="3 3" />
+                <BoxContainer Orientation="Vertical"
+                    HorizontalExpand="True"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-                    <BoxContainer Orientation="Vertical" Margin="4 0">
-                        <RichTextLabel Name="LoginLabel" Margin="0 4"/>
-                        <RichTextLabel Name="PasswordLabel" Margin="0 4"/>
+                    <BoxContainer Orientation="Horizontal" Margin="4 0">
+                        <RichTextLabel Name="LoginLabel" HorizontalExpand="True" Text="{Loc 'computer-login-label'}" Margin="0 4"/>
+                        <LineEdit Name="LoginLineEdit" PlaceHolder="{Loc 'line-edit-placeholder'}" HorizontalExpand="True" MinWidth="250" Margin="4"/>
                     </BoxContainer>
-                    <BoxContainer Orientation="Vertical" Margin="4 0">
-                        <LineEdit Name="LoginLineEdit" Margin="0 4"/>
-                        <LineEdit Name="PasswordLineEdit" Margin="0 4" PasswordChar="*"/>
+                    <BoxContainer Orientation="Horizontal" Margin="4 0" HorizontalExpand="True">
+                        <RichTextLabel Name="PasswordLabel" HorizontalExpand="True" Text="{Loc 'computer-pass-label'}" Margin="0 4"/>
+                        <LineEdit Name="PasswordLineEdit" PlaceHolder="{Loc 'line-edit-placeholder'}" HorizontalExpand="True" MinWidth="250" Margin="4"/>
                     </BoxContainer>
                 </BoxContainer>
-
+                <Button Name="LoginButton" Margin="4" SetHeight="50" Text="{Loc 'computer-login-button'}"/>
             </BoxContainer>
         </PanelContainer>
 
@@ -128,21 +128,35 @@
                 VerticalExpand="True">
                 <BoxContainer
                     Name="FooterButtons"
+                    Orientation="Horizontal"
                     HorizontalExpand="True"
                     VerticalExpand="True">
-                    <Control HorizontalExpand="True">
-                        <Button
-                            Name="TurnOffButton"
-                            HorizontalAlignment="Left">
-                            <TextureRect Stretch="KeepAspectCentered"
-                                         TexturePath="/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png"
-                                         TextureScale="0.5 0.5"/>
-                        </Button>
+                    <Control HorizontalExpand="True" HorizontalAlignment="Left">
+                        <BoxContainer
+                            Orientation="Horizontal"
+                            HorizontalExpand="True"
+                            VerticalExpand="True">
+                            <Button
+                                Name="TurnOffButton"
+                                ToolTip="{Loc 'computer-turn-off-button-tooltip'}">
+                                <TextureRect Stretch="KeepAspectCentered"
+                                            TexturePath="/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png"
+                                            TextureScale="0.5 0.5"
+                                            Margin="8"/>
+                            </Button>
+                            <Button
+                                Name="LogOutButton"
+                                ToolTip="{Loc 'computer-log-out-button-tooltip'}">
+                                <TextureRect Stretch="KeepAspectCentered"
+                                            TexturePath="/Textures/Interface/VerbIcons/open.svg.192dpi.png"
+                                            TextureScale="0.5 0.5"
+                                            Margin="8"/>
+                            </Button>
+                        </BoxContainer>
                     </Control>
                     <BoxContainer
                         Margin="4,0"
                         HorizontalAlignment="Right"
-                        HorizontalExpand="True"
                         Orientation="Horizontal"
                         VerticalExpand="True">
                         <TextureRect VerticalAlignment="Bottom"
