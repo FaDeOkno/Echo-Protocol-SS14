@@ -46,6 +46,7 @@
             ModulateSelfOverride="Yellow"
             Align="Right"
             Visible="false"/>
+        <!-- ECHO-Tweak: скрытые иконки -->
 
         <RichTextLabel
             Name="Label"
