@@ -58,8 +58,8 @@ public sealed class SaveZNetworkCommand : LocalizedEntityCommands
         }
 
         if (!_zLoader.TrySaveMap(args[1], target.Value, out var error))
-        {
             shell.WriteError(error);
-        }
+        else
+            shell.WriteError("Save successful.");
     }
 }

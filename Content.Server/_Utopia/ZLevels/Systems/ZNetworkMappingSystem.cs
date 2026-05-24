@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text.Json;
@@ -30,8 +31,16 @@ public sealed class ZNetworkMappingSystem : EntitySystem
     public bool TrySaveMap(string path, EntityUid target, [NotNullWhen(false)] out string? error)
     {
         error = null;
+        var resPath = new ResPath($"{path}/map-data.json");
 
-        if (_resMan.ContentFindFiles(path).Count() > 0)
+        if (_resMan.UserData.Exists(resPath))
+        {
+            foreach (var file in _resMan.UserData.DirectoryEntries(new(path)))
+            {
+                _resMan.UserData.Delete(new($"{path}/{file}"));
+            }
+        }
+        else if (_resMan.UserData.DirectoryEntries(new(path)).Count() > 0)
         {
             error = $"Target directory is not empty.";
             return false;
@@ -92,7 +101,6 @@ public sealed class ZNetworkMappingSystem : EntitySystem
             return false;
         }
 
-        var resPath = new ResPath($"{path}/map-data.json");
         var jsonData = JsonSerializer.Serialize<SavedZNetworkMapData>(data, new JsonSerializerOptions(JsonSerializerDefaults.General));
         _resMan.UserData.WriteAllText(resPath, jsonData);
 
@@ -102,8 +110,16 @@ public sealed class ZNetworkMappingSystem : EntitySystem
     public bool TrySaveGrid(string path, EntityUid target, [NotNullWhen(false)] out string? error)
     {
         error = null;
+        var resPath = new ResPath($"{path}/grid-data.json");
 
-        if (_resMan.ContentFindFiles(path).Count() > 0)
+        if (_resMan.UserData.Exists(resPath))
+        {
+            foreach (var file in _resMan.UserData.DirectoryEntries(new(path)))
+            {
+                _resMan.UserData.Delete(new($"{path}/{file}"));
+            }
+        }
+        else if (_resMan.UserData.DirectoryEntries(new(path)).Count() > 0)
         {
             error = $"Target directory is not empty.";
             return false;
@@ -145,7 +161,6 @@ public sealed class ZNetworkMappingSystem : EntitySystem
             }
         }
 
-        var resPath = new ResPath($"{path}/grid-data.json");
         var jsonData = JsonSerializer.Serialize<SavedZNetworkGridData>(data, new JsonSerializerOptions(JsonSerializerDefaults.General));
         _resMan.UserData.WriteAllText(resPath, jsonData);
 
