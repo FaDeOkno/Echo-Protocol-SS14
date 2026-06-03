@@ -1,8 +1,10 @@
-﻿using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Pe-Tweak добавлено using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization; // Pe-Tweak добавлено using Robust.Shared.Serialization;
 
 namespace Content.Shared.Kitchen
 {
@@ -34,6 +36,10 @@ namespace Content.Shared.Kitchen
         [DataField("time")]
         public uint CookTime { get; private set; } = 5;
 
+        // ECHO - Разделяет типы рецептов микроволновки
+
+        [DataField("recipeType", customTypeSerializer: typeof(FlagSerializer<MicrowaveRecipeTypeFlags>))]
+        public int RecipeType = (int)MicrowaveRecipeType.Microwave; // Pe-Tweak Добавлено [DataField("recipeType", customTypeSerializer: typeof(FlagSerializer<MicrowaveRecipeTypeFlags>))] public int RecipeType = (int)MicrowaveRecipeType.Microwave; 
         public string Name => Loc.GetString(_name);
 
         // TODO Turn this into a ReagentQuantity[]
@@ -62,4 +68,17 @@ namespace Content.Shared.Kitchen
             return n;
         }
     }
+
+    // Echo - Типы рецептов для микроволновой печи, позволяющие ограничить использование определенных рецептов определенными моделями микроволновых печей
+    // Pe-Tweak добавлено - [Flags, FlagsFor(typeof(MicrowaveRecipeTypeFlags))] [Serializable, NetSerializable]  public enum MicrowaveRecipeType : int     { Microwave = 1,  Oven = 2 } public sealed class MicrowaveRecipeTypeFlags { }
+    [Flags, FlagsFor(typeof(MicrowaveRecipeTypeFlags))]
+    [Serializable, NetSerializable]
+    public enum MicrowaveRecipeType : int
+    {
+        Microwave = 1,
+        Oven = 2,
+    }
+
+    public sealed class MicrowaveRecipeTypeFlags { }
+    // Pe-Tweak - Конец
 }
