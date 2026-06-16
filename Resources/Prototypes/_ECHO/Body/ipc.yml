@@ -1,5 +1,6 @@
 - type: markingsGroup
   id: EchoIPC
+  onlyGroupWhitelisted: true
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 1
