@@ -1,0 +1,19 @@
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: EchoMobIPC
+  markingLimits: MobIPCMarkingLimits
+  dollPrototype: EchoAppearanceIPC
+  skinColoration: Hues
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  maleLastNames: IpcLast
+  femaleLastNames: IpcLast
+  naming: FirstDashLast
+  minAge: 1
+  maxAge: 55
+  oldAge: 50
+  youngAge: 25
+  sexes:
+  - Unsexed
