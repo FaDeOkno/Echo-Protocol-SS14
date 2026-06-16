@@ -1,0 +1,742 @@
+# Simple Station
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenStatic
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_static
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenBlue
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_blue
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenBreakout
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_breakout
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenEight
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eight
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenGoggles
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_goggles
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenExclaim
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_exclaim
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenHeart
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_heart
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenMonoeye
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_monoeye
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenNature
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_nature
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenOrange
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_orange
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenPink
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_pink
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenQuestion
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_question
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenShower
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_shower
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenYellow
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_yellow
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenScroll
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_scroll
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenConsole
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_console
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenRgb
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rgb
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenGlider
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_glider
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenRainbowhoriz
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rainbowhoriz
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenBsod
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_bsod
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenText
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_text
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenSinewave
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_sinewave
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenSquarewave
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_squarewave
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenEcgwave
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_ecgwave
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenEyes
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eyes
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenEyestall
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eyestall
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenEyesangry
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eyesangry
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenLoading
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_loading
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenWindowsxp
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_windowsxp
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenTetris
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_tetris
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenTv
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_tv
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenTextdrop
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_textdrop
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenStars
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_stars
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  #sponsorOnly: true # Corvax-Sponsors
+  id: EchoIPCScreenRainbowdiag
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rainbowdiag
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenBlank
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_blank
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenSmile
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_smile
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenFrown
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_frown
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenRing
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_ring
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenL
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_l
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenPoxui
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_poxui
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenAbsolutepoxui
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_absolute_poxui
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenAwesome
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_awesome
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenBestfriend
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_best_friend
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenBigsmile
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_bigsmile
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenBoredom
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_boredom
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenClown
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_clown
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCreeper
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_creeper
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenDealmaker
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_dealmaker
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenMime
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_mime
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenMonkey
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_monkey
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenMrgutsy
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_mr_gutsy
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenNerd
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_nerd
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenNya
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_nya
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenOko
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_oko
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenRock
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rock
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenSkull
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_skull
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenTenna
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_tenna
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteNeutral
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_neutral
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteEyes
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_eyes
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteAngry
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_angry
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteSuspicious
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_suspicious
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteWorried
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_worried
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteSmirking
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_smirking
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteCryed
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_cryed
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteLaughing
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_laughing
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteQuestioningly
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_questioningly
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenCuteUnsurprised
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_unsurprised
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenPacifist1
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_pacifist_1
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenPacifist2
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_pacifist_2
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenAscended
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_ascended
+  shader: unshaded
+
+- type: marking
+  groupWhitelist: [EchoIPC]
+  id: EchoIPCScreenMonoeyeAlt
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_monoeye_alt
+  shader: unshaded
+
+- type: marking
+  speciesRestriction: []
+  id: EchoIPCScreenBroken
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_broken
