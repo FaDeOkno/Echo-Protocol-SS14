@@ -199,6 +199,11 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                     _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
                 else
                     _sprite.LayerSetColor(target, layerId, Color.White);
+
+                // ECHO-Tweak-start
+                if (proto.Shader != null)
+                    Comp<SpriteComponent>(target).LayerSetShader(layerId, proto.Shader);
+                // ECHO-Tweak-end
             }
 
             applied.Add(marking);
