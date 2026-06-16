@@ -1,0 +1,187 @@
+- type: entity
+  parent:
+  - EchoAppearanceIPC
+  - MobAtmosStandard
+  - MobFlammable
+  - BaseSpeciesMob
+  id: EchoMobIPC
+  name: Urist McClank
+  components:
+  # Stats
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      125: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    allowRevives: true
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 220
+      behaviors:
+      - !type:GibBehavior { }
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.8
+      60: 0.6
+      80: 0.4
+      100: 0.3
+
+  # Visuals + sounds
+  - type: Posing
+  - type: InteractionPopup
+    interactSuccessString: petting-success-ipc
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Vocal
+    sounds:
+      Male: UnisexIPC
+      Female: UnisexIPC
+      Unsexed: UnisexIPC
+  - type: Deathgasp
+    prototype: IPCDeathgasp
+  - type: TypingIndicator
+    proto: robot
+
+  # Radio
+  - type: Wires
+    boardName: "ipc-board-name"
+    layoutId: IPC
+  - type: WiresPanel
+  - type: EncryptionKeyHolder
+    keySlots: 3
+    examineWhileLocked: false
+    keysExtractionMethod: Cutting
+  - type: ActiveRadio
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+
+  # Light
+  - type: UnpoweredFlashlight
+  - type: PointLight
+    enabled: false
+    color: "#ffffff"
+    mask: /Textures/Effects/LightMasks/cone.png
+    offset: 0,-0.3
+    autoRot: true
+    radius: 3
+    energy: 2
+
+  # Slots
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        locked: true
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Lock
+    locked: true
+    lockOnClick: false
+    unlockOnClick: false
+    lockTime: 5
+    unlockTime: 5
+    breakOnAccessBreaker: false
+  - type: SlotRequiresLock
+    slotId: cell_slot
+
+  # Power
+  - type: APCBatteryDrinker
+  - type: PassiveBatteryDrain
+  - type: ChargeLevelAlert
+  - type: ChargeMoveSpeedThresholds
+    speedModifierThresholds:
+      0.7: 1
+      0.5: 0.75
+      0.2: 0.5
+      0: 0.35
+  - type: LowBatterySignal
+    interval: 12
+    othersPopup: silicon-power-low
+    selfPopup: silicon-power-low
+    sound:
+      path: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"
+      params:
+        volume: -2
+
+  # Everything else
+  - type: CanEnterCryostorage
+  - type: OfferItem
+  - type: EyeProtection
+    protectionTime: 12
+  - type: ContentEye
+    maxZoom: 1.0,1.0
+  - type: LightningTarget
+    priority: 3
+    lightningExplode: false
+  - type: Tag
+    tags:
+    - CanPilot
+    - DoorBumpOpener
+    - SiliconEmotes
+    - Unimplantable
+    - AnomalyHost
+  - type: UserInterface
+    interfaces:
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: Inventory
+    templateId: ipc
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: EchoAppearanceIPC
+  name: human appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: EchoTorsoIPC
+      Head: EchoOrganIPCHead
+      ArmLeft: EchoOrganIPCArmLeft
+      ArmRight: EchoOrganIPCArmRight
+      HandRight: EchoOrganIPCHandRight
+      HandLeft: EchoOrganIPCHandLeft
+      LegLeft: EchoOrganIPCLegLeft
+      LegRight: EchoOrganIPCLegRight
+      FootLeft: EchoOrganIPCFootLeft
+      FootRight: EchoOrganIPCFootRight
+      Brain: EchoOrganBrainIPC
+      Eyes: EchoOrganIPCEyes
+      Tongue: EchoOrganIPCTongue
+      Ears: EchoOrganIPCEars
+      Heart: EchoOrganIPCPump
+  - type: HumanoidProfile
+    species: Human
