@@ -113,4 +113,5 @@ public enum SpeciesNaming : byte
     FirstLast,
     FirstDashFirst,
     TheFirstofLast,
+    FirstDashLast,  // ECHO-Tweak: IPC names
 }
