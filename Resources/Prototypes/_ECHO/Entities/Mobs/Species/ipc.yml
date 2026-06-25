@@ -54,6 +54,10 @@
     prototype: IPCDeathgasp
   - type: TypingIndicator
     proto: robot
+  - type: CustomizableAppearance
+    actionId: EchoIPCCustomizationAction
+    allowedLayers: [ FacialHair ]
+    organs: [ Head ]
 
   # Radio
   - type: Wires
@@ -145,6 +149,8 @@
         type: StrippableBoundUserInterface
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+      enum.CustomizableAppearanceUiKey.Key:
+        type: CustomizableAppearanceBoundUserInterface
   - type: Inventory
     templateId: ipc
     displacements:

@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseAction
+  id: EchoIPCCustomizationAction
+  name: Change screen
+  description: ebebeb
+  components:
+  - type: Action
+    useDelay: 1
+    icon: { sprite: Structures/Specific/anomaly.rsi, state: anom1 }
+  - type: InstantAction
+    event: !type:ToggleCustomizableAppearanceMenuEvent
