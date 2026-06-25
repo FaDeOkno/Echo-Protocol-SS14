@@ -8,8 +8,7 @@
   skinColoration: Hues
   maleFirstNames: IpcFirst
   femaleFirstNames: IpcFirst
-  maleLastNames: IpcLast
-  femaleLastNames: IpcLast
+  lastNames: IpcLast
   naming: FirstDashLast
   minAge: 1
   maxAge: 55
