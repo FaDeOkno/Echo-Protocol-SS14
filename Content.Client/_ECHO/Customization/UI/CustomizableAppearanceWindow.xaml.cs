@@ -10,13 +10,5 @@ public sealed partial class CustomizableAppearanceWindow : DefaultWindow
     public CustomizableAppearanceWindow()
     {
         RobustXamlLoader.Load(this);
-
-        ContentsTab.SetTabTitle(0, Loc.GetString("customizable-appearance-markings"));
-        ContentsTab.SetTabTitle(1, Loc.GetString("customizable-appearance-misc"));
-    }
-
-    public void SetDoll(EntityUid? dollEntity)
-    {
-        DollView.SetEntity(dollEntity);
     }
 }

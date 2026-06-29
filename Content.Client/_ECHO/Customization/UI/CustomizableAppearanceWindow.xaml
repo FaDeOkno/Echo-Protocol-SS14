@@ -2,18 +2,8 @@
                xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
                MinSize="700 500">
     <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
-
         <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True">
             <humanoid:MarkingPicker Name="MarkingsPicker" Access="Public" HorizontalExpand="True" VerticalExpand="True" Margin="4"/>
-            <SpriteView Name="DollView" SetSize="96 96" OverrideDirection="South" />
-        </BoxContainer>
-        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
-            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
-                    <RichTextLabel Name="NameLabel" HorizontalAlignment="Left"/>
-                    <RichTextLabel Name="NameLabel" HorizontalAlignment="Left"/>
-                </BoxContainer>
-            </BoxContainer>
         </BoxContainer>
     </BoxContainer>
 </DefaultWindow>
