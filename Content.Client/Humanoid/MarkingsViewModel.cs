@@ -290,6 +290,15 @@ public sealed class MarkingsViewModel
 
         if (limits.Limit == 1 && layerMarkings.Count == 1)
         {
+            // ECHO-Tweak-start
+            // Сохранение цветов при смене единственного маркинга
+            var oldColors = layerMarkings[0].MarkingColors;
+            for (var i = 0; i < oldColors.Count && i < newMarking.MarkingColors.Count; i++)
+            {
+                newMarking = newMarking.WithColorAt(i, oldColors[i]);
+            }
+            // ECHO-Tweak-end
+
             layerMarkings.Clear();
             layerMarkings.Add(newMarking);
             MarkingsChanged?.Invoke(organ, layer);
