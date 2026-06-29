@@ -28,7 +28,7 @@ public sealed class CustomizableAppearanceBoundUserInterface : BoundUserInterfac
 
         _markingsModel.MarkingsChanged += (_, _) =>
         {
-            SendMessage(new CustomizableAppearanceSelectMarkingMessage(_markingsModel.Markings));
+            SendPredictedMessage(new CustomizableAppearanceSelectMarkingMessage(_markingsModel.Markings));
         };
     }
 
