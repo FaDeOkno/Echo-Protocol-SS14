@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Body;
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -8,7 +9,7 @@ namespace Content.Shared._ECHO.Customization;
 
 public abstract class SharedCustomizableAppearanceSystem : EntitySystem
 {
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] protected readonly SharedVisualBodySystem VisualBody = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
@@ -21,6 +22,7 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
         Subs.BuiEvents<CustomizableAppearanceComponent>(CustomizableAppearanceUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnBuiOpened);
+            subs.Event<CustomizableAppearanceSelectMarkingMessage>(OnSelectMarking);
         });
     }
 
@@ -38,16 +40,29 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
         _ui.OpenUi(ent.Owner, CustomizableAppearanceUiKey.Key, args.Performer);
     }
 
+    private void OnSelectMarking(Entity<CustomizableAppearanceComponent> ent, ref CustomizableAppearanceSelectMarkingMessage args)
+    {
+        if (ent.Comp.AppearanceChangeDuration <= 0f)
+        {
+            VisualBody.ApplyMarkings(ent.Owner, args.Markings);
+            UpdateUi(ent);
+        }
+        else
+        {
+            StartChangeDoAfter(ent, args.Markings);
+        }
+    }
+
     private void OnBuiOpened(Entity<CustomizableAppearanceComponent> ent, ref BoundUIOpenedEvent args)
         => UpdateUi(ent);
 
-    private void OnChangeDoAfter(Entity<CustomizableAppearanceComponent> ent)
+    protected virtual void StartChangeDoAfter(Entity<CustomizableAppearanceComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
     {
     }
 
-    private void UpdateUi(Entity<CustomizableAppearanceComponent> ent)
+    protected void UpdateUi(Entity<CustomizableAppearanceComponent> ent)
     {
-        if (!_visualBody.TryGatherMarkingsData(ent.Owner, ent.Comp.AllowedLayers.ToHashSet(), out var profiles, out var markings, out var applied))
+        if (!VisualBody.TryGatherMarkingsData(ent.Owner, ent.Comp.AllowedLayers.ToHashSet(), out var profiles, out var markings, out var applied))
             return;
 
         foreach (var profile in profiles)

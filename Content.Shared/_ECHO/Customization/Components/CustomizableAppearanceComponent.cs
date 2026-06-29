@@ -1,4 +1,5 @@
 using Content.Shared.Body;
+using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -30,4 +31,7 @@ public sealed partial class CustomizableAppearanceComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? MenuAction;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public DoAfterId? AppearanceChangeDoAfter;
 }
