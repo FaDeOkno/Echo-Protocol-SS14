@@ -106,7 +106,7 @@ public class RadialContainer : LayoutContainer
     {
         // ECHO-Tweak-start
         IoCManager.InjectDependencies(this);
-        _shader = _prototypeManager.Index<ShaderPrototype>("RadialMenu")
+        _shader = _prototypeManager.Index((ProtoId<ShaderPrototype>)"RadialMenu")
                                    .InstanceUnique();
         // ECHO-Tweak-end
     }
