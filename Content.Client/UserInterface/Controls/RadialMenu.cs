@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._ECHO.UserInterface;
 using Content.Shared.Input;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
@@ -12,6 +13,10 @@ namespace Content.Client.UserInterface.Controls;
 [Virtual]
 public class RadialMenu : BaseWindow
 {
+    // ECHO-Tweak-start
+    public static RadialMenuType RadialMenuConfig = RadialMenuType.Simple;
+    // ECHO-Tweak-end
+
     /// <summary>
     /// Contextual button used to traverse through previous layers of the radial menu
     /// </summary>
@@ -564,6 +569,13 @@ public class RadialMenuButtonWithSector : RadialMenuButton, IRadialMenuItemWithS
     /// <inheritdoc />
     protected override void Draw(DrawingHandleScreen handle)
     {
+        // ECHO-Tweak-start
+        // Shader radial menu
+
+        if (RadialMenu.RadialMenuConfig != RadialMenuType.Legacy)
+            return;
+        // ECHO-Tweak-end
+
         base.Draw(handle);
 
         if (_parentCenter == null)

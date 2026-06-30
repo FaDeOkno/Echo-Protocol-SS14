@@ -186,6 +186,9 @@ public class RadialContainer : LayoutContainer
     /// <inheritdoc />
     protected override void Draw(DrawingHandleScreen handle)
     {
+        if (RadialMenu.RadialMenuConfig == RadialMenuType.Legacy)
+            return;
+
         base.Draw(handle);
 
         bool innerDecorations = (int)RadialMenu.RadialMenuConfig >= 4;
