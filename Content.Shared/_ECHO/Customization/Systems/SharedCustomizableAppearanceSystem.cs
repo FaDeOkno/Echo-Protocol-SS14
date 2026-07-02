@@ -123,7 +123,7 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
                 applied.Remove(appliedPair.Key);
         }
 
-        var state = new CustomizableAppearanceBoundUserInterfaceState(ent.Comp.AllowAppearanceChange, ent.Comp.AllowVoiceChange, profiles, markings, applied);
+        var state = new CustomizableAppearanceBoundUserInterfaceState(profiles, markings, applied);
         _ui.SetUiState(ent.Owner, CustomizableAppearanceUiKey.Key, state);
     }
 }

@@ -9,15 +9,15 @@ namespace Content.Shared._ECHO.Customization;
 [Serializable, NetSerializable]
 public sealed partial class CustomizableAppearanceBoundUserInterfaceState : BoundUserInterfaceState
 {
-    public bool AllowLayers;
-    public bool AllowVoiceChange;
+    public readonly Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> OrganProfileData;
+    public readonly Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> OrganMarkingData;
+    public readonly Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> AppliedMarkings;
 
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> OrganProfileData;
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> OrganMarkingData;
     public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> AppliedMarkings;
 
-    public CustomizableAppearanceBoundUserInterfaceState(bool layers, bool voice,
-                                                         Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> profiles,
+    public CustomizableAppearanceBoundUserInterfaceState(Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> profiles,
                                                          Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> markings,
                                                          Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> applied)
     {
