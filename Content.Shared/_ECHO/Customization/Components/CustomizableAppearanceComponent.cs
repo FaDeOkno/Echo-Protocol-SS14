@@ -16,6 +16,9 @@ public sealed partial class CustomizableAppearanceComponent : Component
     public HashSet<ProtoId<OrganCategoryPrototype>> Organs;
 
     [DataField]
+    public List<CustomizableAppearanceRadialOption> RadialOptions = new();
+
+    [DataField]
     public float AppearanceChangeDuration = 1f;
 
     [DataField]

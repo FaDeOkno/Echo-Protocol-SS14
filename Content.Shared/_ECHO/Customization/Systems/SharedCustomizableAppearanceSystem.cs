@@ -3,7 +3,9 @@ using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.GameStates;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._ECHO.Customization;
 
@@ -18,6 +20,8 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
 
         SubscribeLocalEvent<CustomizableAppearanceComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<CustomizableAppearanceComponent, ToggleCustomizableAppearanceMenuEvent>(OnToggleMenu);
+
+        SubscribeAllEvent<CustomizableAppearanceOptionSelectedEvent>(OnRadialOptionSelected);
 
         Subs.BuiEvents<CustomizableAppearanceComponent>(CustomizableAppearanceUiKey.Key, subs =>
         {
@@ -37,7 +41,34 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
             return;
 
         args.Handled = true;
-        _ui.OpenUi(ent.Owner, CustomizableAppearanceUiKey.Key, args.Performer);
+
+        if (ent.Comp.RadialOptions.Count <= 0)
+        {
+            _ui.OpenUi(ent.Owner, CustomizableAppearanceUiKey.Key, args.Performer);
+        }
+        else if (ent.Comp.RadialOptions.Count == 1)
+        {
+            RaiseLocalEvent(new CustomizableAppearanceOptionSelectedEvent(GetNetEntity(ent.Owner), ent.Comp.RadialOptions[0]));
+        }
+        else
+        {
+            OpenRadialMenu(ent.Comp.RadialOptions);
+        }
+    }
+
+    private void OnRadialOptionSelected(CustomizableAppearanceOptionSelectedEvent args)
+    {
+        var ent = GetEntity(args.Sender);
+
+        if (args.Option.UiKey != null)
+        {
+            _ui.TryOpenUi(ent, args.Option.UiKey, ent);
+        }
+
+        if (args.Option.Event != null)
+        {
+            RaiseLocalEvent(ent, args.Option.Event);
+        }
     }
 
     private void OnSelectMarking(Entity<CustomizableAppearanceComponent> ent, ref CustomizableAppearanceSelectMarkingMessage args)
@@ -57,6 +88,10 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
         => UpdateUi(ent);
 
     protected virtual void StartChangeDoAfter(Entity<CustomizableAppearanceComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
+    {
+    }
+
+    protected virtual void OpenRadialMenu(List<CustomizableAppearanceRadialOption> options)
     {
     }
 
