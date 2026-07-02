@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._ECHO.Customization;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class CustomizableAppearanceComponent : Component
+public sealed partial class MidroundCustomizationComponent : Component
 {
     [DataField(required: true)]
     public List<HumanoidVisualLayers> AllowedLayers = new();
@@ -16,7 +16,7 @@ public sealed partial class CustomizableAppearanceComponent : Component
     public HashSet<ProtoId<OrganCategoryPrototype>> Organs;
 
     [DataField]
-    public List<CustomizableAppearanceRadialOption> RadialOptions = new();
+    public List<MidroundCustomizationRadialOption> RadialOptions = new();
 
     [DataField]
     public float AppearanceChangeDuration = 1f;

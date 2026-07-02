@@ -28,7 +28,7 @@ public sealed class CustomizableAppearanceBoundUserInterface : BoundUserInterfac
 
         _markingsModel.MarkingsChanged += (_, _) =>
         {
-            SendPredictedMessage(new CustomizableAppearanceSelectMarkingMessage(_markingsModel.Markings));
+            SendPredictedMessage(new MidroundCustomizationSelectMarkingMessage(_markingsModel.Markings));
         };
     }
 
@@ -36,7 +36,7 @@ public sealed class CustomizableAppearanceBoundUserInterface : BoundUserInterfac
     {
         base.UpdateState(state);
 
-        if (state is not CustomizableAppearanceBoundUserInterfaceState data)
+        if (state is not MidroundCustomizationBoundUserInterfaceState data)
             return;
 
         _markingsModel.OrganData = data.OrganMarkingData;

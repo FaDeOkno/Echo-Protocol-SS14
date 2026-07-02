@@ -1,4 +1,5 @@
 using Content.Shared.Body;
+using Content.Shared.ECHO.SpeechBarks;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
@@ -7,30 +8,28 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._ECHO.Customization;
 
 [Serializable, NetSerializable]
-public sealed partial class CustomizableAppearanceBoundUserInterfaceState : BoundUserInterfaceState
+public sealed partial class MidroundCustomizationBoundUserInterfaceState : BoundUserInterfaceState
 {
     public readonly Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> OrganProfileData;
     public readonly Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> OrganMarkingData;
     public readonly Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> AppliedMarkings;
 
-    public Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> OrganProfileData;
-    public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> OrganMarkingData;
-    public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> AppliedMarkings;
+    public readonly BarkData? SelectedBark;
 
-    public CustomizableAppearanceBoundUserInterfaceState(Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> profiles,
+    public MidroundCustomizationBoundUserInterfaceState(Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> profiles,
                                                          Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> markings,
-                                                         Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> applied)
+                                                         Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> applied,
+                                                         BarkData? selectedBark)
     {
-        AllowLayers = layers;
-        AllowVoiceChange = voice;
         OrganProfileData = profiles;
         OrganMarkingData = markings;
         AppliedMarkings = applied;
+        SelectedBark = selectedBark;
     }
 }
 
 [Serializable, NetSerializable]
-public enum CustomizableAppearanceUiKey
+public enum MidroundCustomizationAppearanceUiKey
 {
     Key
 }

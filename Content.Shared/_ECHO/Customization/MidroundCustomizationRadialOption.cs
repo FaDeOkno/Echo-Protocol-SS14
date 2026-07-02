@@ -5,7 +5,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared._ECHO.Customization;
 
 [Serializable, NetSerializable, DataDefinition]
-public sealed partial class CustomizableAppearanceRadialOption
+public sealed partial class MidroundCustomizationRadialOption
 {
     [DataField(required: true)]
     public SpriteSpecifier Icon = default!;
@@ -17,10 +17,5 @@ public sealed partial class CustomizableAppearanceRadialOption
     public Enum? UiKey = null;
 
     [DataField]
-    public CustomizableAppearanceEvent? Event;
-}
-
-[ImplicitDataDefinitionForInheritors]
-public abstract partial class CustomizableAppearanceEvent : EntityEventArgs
-{
+    public object? Event;
 }

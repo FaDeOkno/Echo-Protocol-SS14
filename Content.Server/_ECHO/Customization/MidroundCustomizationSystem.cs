@@ -9,7 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._ECHO.Customization;
 
-public sealed class CustomizableAppearanceSystem : SharedCustomizableAppearanceSystem
+public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly DoAfterSystem _doAFter = default!;
@@ -18,22 +18,22 @@ public sealed class CustomizableAppearanceSystem : SharedCustomizableAppearanceS
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CustomizableAppearanceComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CustomizableAppearanceComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<CustomizableAppearanceComponent, ApplyCustomizableAppearanceMarkingsDoAfterEvent>(OnApplyDoAfter);
+        SubscribeLocalEvent<MidroundCustomizationComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<MidroundCustomizationComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<MidroundCustomizationComponent, ApplyMidroundCustomizationMarkingsDoAfterEvent>(OnApplyDoAfter);
     }
 
-    private void OnMapInit(Entity<CustomizableAppearanceComponent> ent, ref MapInitEvent args)
+    private void OnMapInit(Entity<MidroundCustomizationComponent> ent, ref MapInitEvent args)
     {
         _actions.AddAction(ent.Owner, ref ent.Comp.MenuAction, ent.Comp.ActionId);
     }
 
-    private void OnShutdown(Entity<CustomizableAppearanceComponent> ent, ref ComponentShutdown args)
+    private void OnShutdown(Entity<MidroundCustomizationComponent> ent, ref ComponentShutdown args)
     {
         _actions.RemoveAction(ent.Comp.MenuAction);
     }
 
-    private void OnApplyDoAfter(Entity<CustomizableAppearanceComponent> ent, ref ApplyCustomizableAppearanceMarkingsDoAfterEvent args)
+    private void OnApplyDoAfter(Entity<MidroundCustomizationComponent> ent, ref ApplyMidroundCustomizationMarkingsDoAfterEvent args)
     {
         ent.Comp.AppearanceChangeDoAfter = null;
         if (args.Cancelled)
@@ -43,14 +43,14 @@ public sealed class CustomizableAppearanceSystem : SharedCustomizableAppearanceS
         UpdateUi(ent);
     }
 
-    protected override void StartChangeDoAfter(Entity<CustomizableAppearanceComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
+    protected override void StartChangeDoAfter(Entity<MidroundCustomizationComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
     {
         if (ent.Comp.AppearanceChangeDoAfter != null)
         {
             _doAFter.Cancel(ent.Comp.AppearanceChangeDoAfter.Value);
         }
 
-        var ev = new ApplyCustomizableAppearanceMarkingsDoAfterEvent(markings);
+        var ev = new ApplyMidroundCustomizationMarkingsDoAfterEvent(markings);
         var doAfterArgs = new DoAfterArgs(EntityManager, ent.Owner, ent.Comp.AppearanceChangeDuration, ev, ent.Owner)
         {
             BreakOnHandChange = false,

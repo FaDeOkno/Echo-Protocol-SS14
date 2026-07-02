@@ -7,17 +7,17 @@ using Robust.Client.UserInterface.Controllers;
 namespace Content.Client._ECHO.Customization.UI;
 
 [UsedImplicitly]
-public sealed class CustomizableAppearanceRadialMenuController : UIController
+public sealed class MidroundCustomizationRadialMenuController : UIController
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private SimpleRadialMenu? _menu;
 
-    public void TryToggleMenu(List<CustomizableAppearanceRadialOption> options)
+    public void TryToggleMenu(List<MidroundCustomizationRadialOption> options)
     {
         if (_menu == null)
         {
-            var models = new List<RadialMenuActionOption<CustomizableAppearanceRadialOption>>();
+            var models = new List<RadialMenuActionOption<MidroundCustomizationRadialOption>>();
             foreach (var option in options)
             {
                 models.Add(new(OnPressed, option)
@@ -43,13 +43,13 @@ public sealed class CustomizableAppearanceRadialMenuController : UIController
         }
     }
 
-    private void OnPressed(CustomizableAppearanceRadialOption option)
+    private void OnPressed(MidroundCustomizationRadialOption option)
     {
         if (_playerManager.LocalEntity is not { Valid: true } player)
             return;
 
         var netPlayer = EntityManager.GetNetEntity(player);
-        var ev = new CustomizableAppearanceOptionSelectedEvent(netPlayer, option);
+        var ev = new MidroundCustomizationOptionSelectedEvent(netPlayer, option);
         EntityManager.RaisePredictiveEvent(ev);
     }
 

@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._ECHO.Customization;
 
-public abstract class SharedCustomizableAppearanceSystem : EntitySystem
+public abstract class SharedMidroundCustomizationSystem : EntitySystem
 {
     [Dependency] protected readonly SharedVisualBodySystem VisualBody = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
@@ -18,24 +18,24 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CustomizableAppearanceComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<CustomizableAppearanceComponent, ToggleCustomizableAppearanceMenuEvent>(OnToggleMenu);
+        SubscribeLocalEvent<MidroundCustomizationComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<MidroundCustomizationComponent, ToggleMidroundCustomizationMenuEvent>(OnToggleMenu);
 
-        SubscribeAllEvent<CustomizableAppearanceOptionSelectedEvent>(OnRadialOptionSelected);
+        SubscribeAllEvent<MidroundCustomizationOptionSelectedEvent>(OnRadialOptionSelected);
 
-        Subs.BuiEvents<CustomizableAppearanceComponent>(CustomizableAppearanceUiKey.Key, subs =>
+        Subs.BuiEvents<MidroundCustomizationComponent>(MidroundCustomizationAppearanceUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnBuiOpened);
-            subs.Event<CustomizableAppearanceSelectMarkingMessage>(OnSelectMarking);
+            subs.Event<MidroundCustomizationSelectMarkingMessage>(OnSelectMarking);
         });
     }
 
-    private void OnInit(Entity<CustomizableAppearanceComponent> ent, ref ComponentInit args)
+    private void OnInit(Entity<MidroundCustomizationComponent> ent, ref ComponentInit args)
     {
         UpdateUi(ent);
     }
 
-    private void OnToggleMenu(Entity<CustomizableAppearanceComponent> ent, ref ToggleCustomizableAppearanceMenuEvent args)
+    private void OnToggleMenu(Entity<MidroundCustomizationComponent> ent, ref ToggleMidroundCustomizationMenuEvent args)
     {
         if (args.Handled)
             return;
@@ -44,11 +44,11 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
 
         if (ent.Comp.RadialOptions.Count <= 0)
         {
-            _ui.OpenUi(ent.Owner, CustomizableAppearanceUiKey.Key, args.Performer);
+            _ui.OpenUi(ent.Owner, MidroundCustomizationAppearanceUiKey.Key, args.Performer);
         }
         else if (ent.Comp.RadialOptions.Count == 1)
         {
-            RaiseLocalEvent(new CustomizableAppearanceOptionSelectedEvent(GetNetEntity(ent.Owner), ent.Comp.RadialOptions[0]));
+            RaiseLocalEvent(new MidroundCustomizationOptionSelectedEvent(GetNetEntity(ent.Owner), ent.Comp.RadialOptions[0]));
         }
         else
         {
@@ -56,7 +56,7 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
         }
     }
 
-    private void OnRadialOptionSelected(CustomizableAppearanceOptionSelectedEvent args)
+    private void OnRadialOptionSelected(MidroundCustomizationOptionSelectedEvent args)
     {
         var ent = GetEntity(args.Sender);
 
@@ -71,7 +71,7 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
         }
     }
 
-    private void OnSelectMarking(Entity<CustomizableAppearanceComponent> ent, ref CustomizableAppearanceSelectMarkingMessage args)
+    private void OnSelectMarking(Entity<MidroundCustomizationComponent> ent, ref MidroundCustomizationSelectMarkingMessage args)
     {
         if (ent.Comp.AppearanceChangeDuration <= 0f)
         {
@@ -84,18 +84,18 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
         }
     }
 
-    private void OnBuiOpened(Entity<CustomizableAppearanceComponent> ent, ref BoundUIOpenedEvent args)
+    private void OnBuiOpened(Entity<MidroundCustomizationComponent> ent, ref BoundUIOpenedEvent args)
         => UpdateUi(ent);
 
-    protected virtual void StartChangeDoAfter(Entity<CustomizableAppearanceComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
+    protected virtual void StartChangeDoAfter(Entity<MidroundCustomizationComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
     {
     }
 
-    protected virtual void OpenRadialMenu(List<CustomizableAppearanceRadialOption> options)
+    protected virtual void OpenRadialMenu(List<MidroundCustomizationRadialOption> options)
     {
     }
 
-    protected void UpdateUi(Entity<CustomizableAppearanceComponent> ent)
+    protected void UpdateUi(Entity<MidroundCustomizationComponent> ent)
     {
         if (!VisualBody.TryGatherMarkingsData(ent.Owner, ent.Comp.AllowedLayers.ToHashSet(), out var profiles, out var markings, out var applied))
             return;
@@ -123,7 +123,7 @@ public abstract class SharedCustomizableAppearanceSystem : EntitySystem
                 applied.Remove(appliedPair.Key);
         }
 
-        var state = new CustomizableAppearanceBoundUserInterfaceState(profiles, markings, applied);
-        _ui.SetUiState(ent.Owner, CustomizableAppearanceUiKey.Key, state);
+        var state = new MidroundCustomizationBoundUserInterfaceState(profiles, markings, applied);
+        _ui.SetUiState(ent.Owner, MidroundCustomizationAppearanceUiKey.Key, state);
     }
 }
