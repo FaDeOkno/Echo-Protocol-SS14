@@ -26,6 +26,7 @@ public sealed class CustomizableAppearanceBoundUserInterface : BoundUserInterfac
         _window.OnApplyPressed += () =>
         {
             SendPredictedMessage(new MidroundCustomizationSelectMarkingMessage(_markingsModel.Markings));
+            Close();
         };
     }
 
