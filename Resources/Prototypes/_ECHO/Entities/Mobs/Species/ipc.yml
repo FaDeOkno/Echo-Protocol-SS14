@@ -58,6 +58,20 @@
     actionId: EchoIPCCustomizationAction
     allowedLayers: [ FacialHair ]
     organs: [ Head ]
+    radialOptions:
+    - optionName: customizable-appearance-screen-change
+      icon:
+       sprite: _ECHO/Interface/Actions/actions_ipc.rsi
+       state: screen
+      uiKey: enum.MidroundCustomizationAppearanceUiKey.Key
+    - optionName: customizable-appearance-barks-change
+      icon: Interface/Actions/scream.png
+      uiKey: enum.MidroundCustomizatioBarksUiKey.Key
+    - optionName: customizable-appearance-flashlight-change
+      icon:
+        sprite: Objects/Tools/flashlight.rsi
+        state: flashlight
+      event: !type:TogglePointLightFollowLayerEvent
 
   # Radio
   - type: Wires
@@ -73,6 +87,9 @@
   - type: IntrinsicRadioTransmitter
 
   # Light
+  - type: PointLightFollowLayerColor
+    enumLayer: enum.HumanoidVisualLayers.FacialHair
+    enabled: false
   - type: UnpoweredFlashlight
   - type: PointLight
     enabled: false
