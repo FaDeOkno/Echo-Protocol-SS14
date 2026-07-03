@@ -7,8 +7,12 @@ namespace Content.Client._ECHO.Customization.UI;
 [GenerateTypedNameReferences]
 public sealed partial class CustomizableAppearanceWindow : DefaultWindow
 {
+    public event Action? OnApplyPressed;
+
     public CustomizableAppearanceWindow()
     {
         RobustXamlLoader.Load(this);
+
+        ApplyButton.OnPressed += _ => OnApplyPressed?.Invoke();
     }
 }

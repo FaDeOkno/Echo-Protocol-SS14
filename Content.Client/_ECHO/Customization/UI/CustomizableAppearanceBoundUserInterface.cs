@@ -21,12 +21,9 @@ public sealed class CustomizableAppearanceBoundUserInterface : BoundUserInterfac
         base.Open();
 
         _window = this.CreateWindow<CustomizableAppearanceWindow>();
-
-        _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
-
         _window.MarkingsPicker.SetModel(_markingsModel);
 
-        _markingsModel.MarkingsChanged += (_, _) =>
+        _window.OnApplyPressed += () =>
         {
             SendPredictedMessage(new MidroundCustomizationSelectMarkingMessage(_markingsModel.Markings));
         };

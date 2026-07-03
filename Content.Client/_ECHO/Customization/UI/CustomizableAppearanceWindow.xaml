@@ -2,7 +2,8 @@
                xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
                MinSize="700 500">
     <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
-        <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+            <Button Name="ApplyButton" Text="{Loc 'customizable-appearance-apply-button'}" HorizontalAlignment="Right"/>
             <humanoid:MarkingPicker Name="MarkingsPicker" Access="Public" HorizontalExpand="True" VerticalExpand="True" Margin="4"/>
         </BoxContainer>
     </BoxContainer>
