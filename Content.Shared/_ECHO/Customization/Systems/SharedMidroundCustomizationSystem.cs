@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.Body;
+using Content.Shared.ECHO.SpeechBarks;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.GameStates;
@@ -18,7 +19,6 @@ public abstract class SharedMidroundCustomizationSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MidroundCustomizationComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<MidroundCustomizationComponent, ToggleMidroundCustomizationMenuEvent>(OnToggleMenu);
 
         SubscribeAllEvent<MidroundCustomizationOptionSelectedEvent>(OnRadialOptionSelected);
@@ -28,11 +28,6 @@ public abstract class SharedMidroundCustomizationSystem : EntitySystem
             subs.Event<BoundUIOpenedEvent>(OnBuiOpened);
             subs.Event<MidroundCustomizationSelectMarkingMessage>(OnSelectMarking);
         });
-    }
-
-    private void OnInit(Entity<MidroundCustomizationComponent> ent, ref ComponentInit args)
-    {
-        UpdateUi(ent);
     }
 
     private void OnToggleMenu(Entity<MidroundCustomizationComponent> ent, ref ToggleMidroundCustomizationMenuEvent args)

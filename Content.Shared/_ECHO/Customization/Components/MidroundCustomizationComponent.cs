@@ -22,9 +22,6 @@ public sealed partial class MidroundCustomizationComponent : Component
     public float AppearanceChangeDuration = 1f;
 
     [DataField]
-    public float VoiceChangeDuration = 1f;
-
-    [DataField]
     public bool AllowVoiceChange = false;
 
     public bool AllowAppearanceChange => AllowedLayers.Count > 0;
