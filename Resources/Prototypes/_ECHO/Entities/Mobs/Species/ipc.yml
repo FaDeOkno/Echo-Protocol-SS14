@@ -151,6 +151,8 @@
         type: StoreBoundUserInterface
       enum.MidroundCustomizationAppearanceUiKey.Key:
         type: CustomizableAppearanceBoundUserInterface
+      enum.MidroundCustomizatioBarksUiKey.Key:
+        type: CustomizableBarksBoundUserInterface
   - type: Inventory
     templateId: ipc
     displacements:
