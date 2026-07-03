@@ -6,6 +6,6 @@
   components:
   - type: Action
     useDelay: 1
-    icon: { sprite: Structures/Specific/anomaly.rsi, state: anom1 }
+    icon: { sprite: _ECHO/Interface/Actions/actions_ipc.rsi, state: screen }
   - type: InstantAction
-    event: !type:ToggleCustomizableAppearanceMenuEvent
+    event: !type:ToggleMidroundCustomizationMenuEvent

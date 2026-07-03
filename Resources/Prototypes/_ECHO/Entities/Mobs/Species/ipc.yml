@@ -54,7 +54,7 @@
     prototype: IPCDeathgasp
   - type: TypingIndicator
     proto: robot
-  - type: CustomizableAppearance
+  - type: MidroundCustomization
     actionId: EchoIPCCustomizationAction
     allowedLayers: [ FacialHair ]
     organs: [ Head ]
@@ -149,7 +149,7 @@
         type: StrippableBoundUserInterface
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
-      enum.CustomizableAppearanceUiKey.Key:
+      enum.MidroundCustomizationAppearanceUiKey.Key:
         type: CustomizableAppearanceBoundUserInterface
   - type: Inventory
     templateId: ipc
