@@ -123,7 +123,13 @@ public abstract class SharedMidroundCustomizationSystem : EntitySystem
                 applied.Remove(appliedPair.Key);
         }
 
-        var state = new MidroundCustomizationBoundUserInterfaceState(profiles, markings, applied);
+        BarkData? currentBark = null;
+
+        if (TryComp<SpeechBarksComponent>(ent.Owner, out var barks))
+            currentBark = barks.Data;
+
+        var state = new MidroundCustomizationBoundUserInterfaceState(profiles, markings, applied, currentBark);
         _ui.SetUiState(ent.Owner, MidroundCustomizationAppearanceUiKey.Key, state);
+        _ui.SetUiState(ent.Owner, MidroundCustomizatioBarksUiKey.Key, state);
     }
 }

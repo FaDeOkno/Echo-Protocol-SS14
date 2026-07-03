@@ -33,3 +33,9 @@ public enum MidroundCustomizationAppearanceUiKey
 {
     Key
 }
+
+[Serializable, NetSerializable]
+public enum MidroundCustomizatioBarksUiKey
+{
+    Key
+}

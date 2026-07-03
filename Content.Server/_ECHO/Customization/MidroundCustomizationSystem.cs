@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.DoAfter;
+using Content.Server.ECHO.SpeechBarks;
 using Content.Shared._ECHO.Customization;
 using Content.Shared.Body;
 using Content.Shared.DoAfter;
@@ -13,6 +14,7 @@ public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSys
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly DoAfterSystem _doAFter = default!;
+    [Dependency] private readonly SpeechBarksSystem _barks = default!;
 
     public override void Initialize()
     {
@@ -21,11 +23,17 @@ public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSys
         SubscribeLocalEvent<MidroundCustomizationComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<MidroundCustomizationComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<MidroundCustomizationComponent, ApplyMidroundCustomizationMarkingsDoAfterEvent>(OnApplyDoAfter);
+
+        Subs.BuiEvents<MidroundCustomizationComponent>(MidroundCustomizatioBarksUiKey.Key, subs =>
+        {
+            subs.Event<MidroundCustomizationSetBarkMessage>(OnSetBark);
+        });
     }
 
     private void OnMapInit(Entity<MidroundCustomizationComponent> ent, ref MapInitEvent args)
     {
         _actions.AddAction(ent.Owner, ref ent.Comp.MenuAction, ent.Comp.ActionId);
+        UpdateUi(ent);
     }
 
     private void OnShutdown(Entity<MidroundCustomizationComponent> ent, ref ComponentShutdown args)
@@ -41,6 +49,11 @@ public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSys
 
         VisualBody.ApplyMarkings(ent.Owner, args.Markings);
         UpdateUi(ent);
+    }
+
+    private void OnSetBark(Entity<MidroundCustomizationComponent> ent, ref MidroundCustomizationSetBarkMessage args)
+    {
+        _barks.SetBarkData(ent.Owner, args.NewBark);
     }
 
     protected override void StartChangeDoAfter(Entity<MidroundCustomizationComponent> ent, Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> markings)
