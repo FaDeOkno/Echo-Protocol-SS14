@@ -83,8 +83,9 @@
     examineWhileLocked: false
     keysExtractionMethod: Cutting
   - type: ActiveRadio
-  - type: IntrinsicRadioReceiver
+  - type: BatteryIntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
+  - type: BatteryIntrinsicRadioTransmitter
 
   # Light
   - type: PointLightFollowLayerColor
