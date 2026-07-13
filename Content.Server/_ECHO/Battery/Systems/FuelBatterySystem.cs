@@ -53,7 +53,7 @@ public sealed class FuelBatterySystem : EntitySystem
             if (item.Value < requiredVolume)
                 continue;
 
-            solution.RemoveReagent(item.Key.ID, FixedPoint2.New(requiredVolume), null);
+            solution.RemoveReagent(item.Key.ID, FixedPoint2.New(requiredVolume), null, true);
             return true;
         }
 
