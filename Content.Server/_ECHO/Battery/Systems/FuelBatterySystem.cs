@@ -1,0 +1,62 @@
+using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Power.EntitySystems;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.FixedPoint;
+using Content.Shared.PowerCell;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+
+namespace Content.Server._ECHO.Battery;
+
+public sealed class FuelBatterySystem : EntitySystem
+{
+    [Dependency] private PowerCellSystem _powerCell = default!;
+    [Dependency] private BatterySystem _battery = default!;
+    [Dependency] private SharedSolutionContainerSystem _solContainer = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<FuelBatteryComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (comp.FuelValid && _powerCell.TryGetBatteryFromSlotOrEntity(uid, out var battery))
+            {
+                _battery.SetCharge(battery.Value.Owner, battery.Value.Comp.MaxCharge);
+            }
+
+            if (comp.NextUpdate > _timing.CurTime)
+                continue;
+
+            comp.NextUpdate = _timing.CurTime + TimeSpan.FromSeconds(comp.UpdatePeriod);
+            comp.FuelValid = TryUpdateFuel((uid, comp));
+        }
+    }
+
+    private bool TryUpdateFuel(Entity<FuelBatteryComponent> ent)
+    {
+        if (!_solContainer.TryGetSolution(ent.Owner, ent.Comp.FuelSolution, out var solutionEnt))
+            return false;
+
+        var solution = solutionEnt.Value.Comp.Solution;
+
+        var reagents = solution.GetReagentPrototypes(_proto);
+
+        foreach (var item in reagents)
+        {
+            if (!ent.Comp.ReagentDrains.TryGetValue(item.Key, out var requiredVolume))
+                continue;
+
+            if (item.Value < requiredVolume)
+                continue;
+
+            solution.RemoveReagent(item.Key.ID, FixedPoint2.New(requiredVolume), null);
+            return true;
+        }
+
+        return false;
+    }
+}
