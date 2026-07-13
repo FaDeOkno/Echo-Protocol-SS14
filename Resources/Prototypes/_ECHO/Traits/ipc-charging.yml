@@ -23,8 +23,10 @@
         reagents:
         - ReagentId: WeldingFuel
           Quantity: 100
-      bloodlossDamage: []
-      bloodlossHealDamage: []
+      bloodlossDamage:
+        Burn: 0
+      bloodlossHealDamage:
+        Burn: 0
       bloodlossThreshold: -1
       bleedReductionAmount: 0
       bloodRefreshAmount: 0
@@ -60,7 +62,11 @@
     - type: PowerCellSlot
       cellSlotId: cell_slot
     - type: ItemSlots
-      slots: []
+      slots:
+        cell_slot:
+          locked: true
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellMedium
     - type: Lock
     - type: SlotRequiresLock
       slotId: cell_slot
