@@ -74,5 +74,6 @@
     - type: PassiveBatteryDrain
     - type: ChargeLevelAlert
     - type: ChargeMoveSpeedThresholds
-      speedModifierThresholds: []
+      speedModifierThresholds:
+        1: 1
     - type: LowBatterySignal
