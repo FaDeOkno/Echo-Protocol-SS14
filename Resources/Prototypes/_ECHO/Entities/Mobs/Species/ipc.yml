@@ -145,6 +145,7 @@
   # Power
   - type: APCBatteryDrinker
   - type: PassiveBatteryDrain
+    drainAmount: 0.75
   - type: ChargeLevelAlert
   - type: ChargeMoveSpeedThresholds
     speedModifierThresholds:
