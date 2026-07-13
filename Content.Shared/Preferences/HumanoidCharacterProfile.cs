@@ -116,7 +116,7 @@ namespace Content.Shared.Preferences
         /// <see cref="_traitPreferences"/>
         /// </summary>
         public IReadOnlySet<ProtoId<TraitPrototype>> TraitPreferences => _traitPreferences;
-        
+
         // ECHO-Tweak : Barks
         [DataField]
         public BarkData Bark = new();
@@ -703,6 +703,10 @@ namespace Content.Shared.Preferences
             foreach (var trait in traits)
             {
                 if (!protoManager.TryIndex(trait, out var traitProto))
+                    continue;
+
+                // ECHO-Tweak: Trait species whitelists
+                if (traitProto.SpeciesWhitelist.Count > 0 && !traitProto.SpeciesWhitelist.Contains(Species))
                     continue;
 
                 // Always valid.
