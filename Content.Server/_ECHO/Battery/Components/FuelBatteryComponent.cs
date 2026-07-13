@@ -8,7 +8,7 @@ namespace Content.Server._ECHO.Battery;
 /// <summary>
 /// Allows entity to recharge its battery from APC
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+[RegisterComponent]
 public sealed partial class FuelBatteryComponent : Component
 {
     [DataField, AutoNetworkedField]
