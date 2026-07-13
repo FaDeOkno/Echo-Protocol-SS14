@@ -175,6 +175,11 @@ public sealed partial class EncryptionKeySystem : EntitySystem
             return;
         }
 
+        // ECHO-Tweak-start
+        if (!component.ExamineWhileLocked && !component.KeysUnlocked)
+            return;
+        // ECHO-Tweak-end
+
         if (component.Channels.Count > 0)
         {
             using (args.PushGroup(nameof(EncryptionKeyComponent)))
