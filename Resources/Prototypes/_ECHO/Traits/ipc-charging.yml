@@ -22,7 +22,7 @@
       bloodReferenceSolution:
         reagents:
         - ReagentId: WeldingFuel
-          Quantity: 100
+          Quantity: 200
       bloodlossDamage:
         Burn: 0
       bloodlossHealDamage:
