@@ -3,7 +3,6 @@
   name: species-name-ipc
   roundStart: true
   prototype: EchoMobIPC
-  markingLimits: MobIPCMarkingLimits
   dollPrototype: EchoAppearanceIPC
   skinColoration: Hues
   maleFirstNames: IpcFirst
