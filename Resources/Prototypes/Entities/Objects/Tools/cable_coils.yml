@@ -82,6 +82,15 @@
           Quantity: 2
         - ReagentId: Carbon #steel-reinforced
           Quantity: 1
+  # ECHO-Tweak-start: IPC
+  - type: Healing
+    damageContainers:
+      - IPC
+    damage:
+      types:
+        Shock: -10
+        Caustic: -10
+  # ECHO-Tweak-end
 
 - type: entity
   parent: CableHVStack
@@ -138,6 +147,15 @@
           Quantity: 3
         - ReagentId: Copper
           Quantity: 2
+  # ECHO-Tweak-start: IPC
+  - type: Healing
+    damageContainers:
+      - IPC
+    damage:
+      types:
+        Shock: -10
+        Caustic: -10
+  # ECHO-Tweak-end
 
 - type: entity
   parent: CableMVStack

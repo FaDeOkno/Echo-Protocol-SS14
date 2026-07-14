@@ -21,9 +21,20 @@
       Critical: BorgCrit
       Dead: BorgDead
     allowRevives: true
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
+  - type: Damageable
+    damageContainer: IPC
+  - type: Repairable # Взамен на быструю починку я урезал лечение примерно в 3 раза. Это лучше, чем DoAfter на 30 секунд при попытке вылечить себя
+    fuelCost: 3
+    selfRepairPenalty: 2
+    doAfterDelay: 2 # was 10 # was 18
+    damage:
+      types:
+        Blunt: -10
+        Slash: -10
+        Piercing: -10
+  - type: CustomSuicideDamage
+    damageType: Shock
+
   - type: Destructible
     thresholds:
     - trigger:
@@ -38,6 +49,24 @@
       60: 0.6
       80: 0.4
       100: 0.3
+  - type: ZombieImmune
+  - type: IgnoreHealOnBuckle
+  - type: DamagedSiliconAccent
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: StatusEffects
+    allowed:
+      - Stun
+      - KnockedDown
+      - SlowedDown
+      - Stutter
+      - Weakness
+      - SeeingRainbows
+      - Electrocution
+      - SlurredSpeech
+      - Muted
+      - Pacified
 
   # Visuals + sounds
   - type: Posing
