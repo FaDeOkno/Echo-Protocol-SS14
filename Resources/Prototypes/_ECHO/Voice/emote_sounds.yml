@@ -27,17 +27,3 @@
       path: /Audio/Effects/Cargo/ping.ogg
     IPCDeathgasp:
       path: /Audio/_ECHO/IPC/borg_deathsound.ogg
-
-- type: emote
-  id: IPCDeathgasp
-  name: chat-emote-name-deathgasp
-  icon: Interface/Emotes/deathgasp.png
-  whitelist:
-    requireAll: true
-    components:
-    - MobState
-    tags:
-    - SiliconEmotes
-  chatMessages: ["chat-emote-msg-deathgasp-ipc"]
-  chatTriggers:
-  - ipcdeathgasp
