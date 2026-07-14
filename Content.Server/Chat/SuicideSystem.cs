@@ -1,3 +1,4 @@
+using Content.Server._ECHO.Suicide;
 using Content.Server.Ghost;
 using Content.Server.Hands.Systems;
 using Content.Shared.Administration.Logs;
@@ -71,6 +72,14 @@ public sealed class SuicideSystem : EntitySystem
         // This is a handled event, but the result is never used
         // It looks like TriggerOnMobstateChange is supposed to prevent you from suiciding
         var suicideEvent = new SuicideEvent(victim);
+
+        // ECHO-Tweak-start
+        if (TryComp<CustomSuicideDamageComponent>(victim, out var custom))
+        {
+            suicideEvent.DamageType = custom.DamageType;
+        }
+        // ECHO-Tweak-end
+
         RaiseLocalEvent(victim, suicideEvent);
 
         // Since the player is already dead the log will not contain their username.
