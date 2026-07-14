@@ -176,7 +176,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         }
 
         // ECHO-Tweak-start
-        if (!component.ExamineWhileLocked && !component.KeysUnlocked)
+        if (!component.ExamineWhileLocked && (!component.KeysUnlocked || (TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)))
             return;
         // ECHO-Tweak-end
 
