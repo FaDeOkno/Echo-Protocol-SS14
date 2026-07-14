@@ -1,3 +1,4 @@
+using Content.Shared._ECHO.Healing;
 using Content.Shared.Actions;
 using Content.Shared.Bed.Components;
 using Content.Shared.Bed.Sleep;
@@ -152,6 +153,11 @@ public sealed class BedSystem : EntitySystem
             {
                 if (_mobStateSystem.IsDead(healedEntity))
                     continue;
+
+                // ECHO-Tweak-start
+                if (HasComp<IgnoreHealOnBuckleComponent>(healedEntity))
+                    continue;
+                // ECHO-Tweak-end
 
                 var damage = bedComponent.Damage;
 
