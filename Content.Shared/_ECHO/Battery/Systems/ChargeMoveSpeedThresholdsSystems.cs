@@ -3,6 +3,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell;
+using Robust.Shared.Containers;
 
 namespace Content.Shared._ECHO.Battery;
 
@@ -17,6 +18,8 @@ public sealed class ChargeMoveSpeedThresholdsSystems : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<ChargeMoveSpeedThresholdsComponent, ChargeChangedEvent>(RefreshModifiers);
+        SubscribeLocalEvent<ChargeMoveSpeedThresholdsComponent, EntRemovedFromContainerMessage>(RefreshModifiers);
+        SubscribeLocalEvent<ChargeMoveSpeedThresholdsComponent, EntInsertedIntoContainerMessage>(RefreshModifiers);
         SubscribeLocalEvent<ChargeMoveSpeedThresholdsComponent, AfterAutoHandleStateEvent>(RefreshModifiers);
 
         SubscribeLocalEvent<ChargeMoveSpeedThresholdsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshModifiers);
