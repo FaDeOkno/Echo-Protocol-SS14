@@ -161,6 +161,13 @@
       path: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"
       params:
         volume: -2
+  - type: ScreenGlitch
+  - type: ScreenGlitchOnEmp
+    chroma: 3
+    duration: 10
+    effectSpeed: 4
+    offset: 8
+    seedUpdateInterval: 0.05
 
   # Everything else
   - type: CanEnterCryostorage
