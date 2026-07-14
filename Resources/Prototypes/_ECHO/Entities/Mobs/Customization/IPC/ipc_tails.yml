@@ -2,7 +2,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCTailHydra
   bodyPart: Tail
-  markingCategory: Tail
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
       state: ipc_tail_hydra_prime
@@ -17,7 +16,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCTailOctopus
   bodyPart: Tail
-  markingCategory: Tail
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
       state: ipc_tail_octopus
@@ -26,7 +24,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCTailFox
   bodyPart: Tail
-  markingCategory: Tail
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
       state: ipc_tail_fox_prime
@@ -39,7 +36,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCTailFork
   bodyPart: Tail
-  markingCategory: Tail
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_tails.rsi
       state: ipc_tail_fork_prime

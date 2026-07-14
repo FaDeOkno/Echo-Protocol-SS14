@@ -2,7 +2,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartChestCore
   bodyPart: Chest
-  markingCategory: Chest
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: chest_core
@@ -11,7 +10,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartChestDefaultLines
   bodyPart: Chest
-  markingCategory: Chest
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: chest_line_prime
@@ -26,7 +24,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartLArmDefaultLines
   bodyPart: LArm
-  markingCategory: Arms
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: l_arm_line_prime
@@ -37,7 +34,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartRArmDefaultLines
   bodyPart: RArm
-  markingCategory: Arms
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: r_arm_line_prime
@@ -48,7 +44,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartLHandDefaultLines
   bodyPart: LHand
-  markingCategory: Arms
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: l_hand_line_prime
@@ -57,7 +52,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartRHandDefaultLines
   bodyPart: RHand
-  markingCategory: Arms
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: r_hand_line_prime
@@ -66,7 +60,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartLFootDefaultLines
   bodyPart: LFoot
-  markingCategory: Legs
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: l_foot_line_prime
@@ -75,7 +68,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCPartRFootDefaultLines
   bodyPart: RFoot
-  markingCategory: Legs
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_parts.rsi
       state: r_foot_line_prime

@@ -5,7 +5,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenStatic
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_static
@@ -15,7 +14,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenBlue
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_blue
@@ -26,7 +24,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenBreakout
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_breakout
@@ -37,7 +34,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenEight
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_eight
@@ -47,7 +43,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenGoggles
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_goggles
@@ -57,7 +52,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenExclaim
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_exclaim
@@ -67,7 +61,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenHeart
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_heart
@@ -77,7 +70,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenMonoeye
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_monoeye
@@ -87,7 +79,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenNature
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_nature
@@ -98,7 +89,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenOrange
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_orange
@@ -108,7 +98,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenPink
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_pink
@@ -118,7 +107,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenQuestion
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_question
@@ -129,7 +117,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenShower
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_shower
@@ -140,7 +127,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenYellow
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_yellow
@@ -151,7 +137,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenScroll
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_scroll
@@ -161,7 +146,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenConsole
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_console
@@ -172,7 +156,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenRgb
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_rgb
@@ -183,7 +166,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenGlider
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_glider
@@ -194,7 +176,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenRainbowhoriz
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_rainbowhoriz
@@ -205,7 +186,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenBsod
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_bsod
@@ -216,7 +196,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenText
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_text
@@ -227,7 +206,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenSinewave
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_sinewave
@@ -238,7 +216,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenSquarewave
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_squarewave
@@ -249,7 +226,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenEcgwave
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_ecgwave
@@ -259,7 +235,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenEyes
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_eyes
@@ -269,7 +244,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenEyestall
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_eyestall
@@ -279,7 +253,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenEyesangry
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_eyesangry
@@ -290,7 +263,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenLoading
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_loading
@@ -301,7 +273,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenWindowsxp
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_windowsxp
@@ -312,7 +283,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenTetris
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_tetris
@@ -323,7 +293,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenTv
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_tv
@@ -334,7 +303,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenTextdrop
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_textdrop
@@ -345,7 +313,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenStars
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_stars
@@ -356,7 +323,6 @@
   #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenRainbowdiag
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_rainbowdiag
@@ -366,7 +332,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenBlank
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_blank
@@ -376,7 +341,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenSmile
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_smile
@@ -386,7 +350,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenFrown
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_frown
@@ -396,7 +359,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenRing
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_ring
@@ -406,7 +368,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenL
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_l
@@ -416,7 +377,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenPoxui
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_poxui
@@ -426,7 +386,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenAbsolutepoxui
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_absolute_poxui
@@ -436,7 +395,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenAwesome
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_awesome
@@ -446,7 +404,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenBestfriend
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_best_friend
@@ -456,7 +413,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenBigsmile
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_bigsmile
@@ -466,7 +422,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenBoredom
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_boredom
@@ -476,7 +431,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenClown
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_clown
@@ -486,7 +440,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCreeper
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_creeper
@@ -496,7 +449,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenDealmaker
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_dealmaker
@@ -506,7 +458,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenMime
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_mime
@@ -516,7 +467,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenMonkey
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_monkey
@@ -526,7 +476,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenMrgutsy
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_mr_gutsy
@@ -536,7 +485,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenNerd
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_nerd
@@ -546,7 +494,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenNya
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_nya
@@ -556,7 +503,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenOko
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_oko
@@ -566,7 +512,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenRock
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_rock
@@ -576,7 +521,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenSkull
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_skull
@@ -586,7 +530,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenTenna
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_tenna
@@ -596,7 +539,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteNeutral
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_neutral
@@ -606,7 +548,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteEyes
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_eyes
@@ -616,7 +557,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteAngry
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_angry
@@ -626,7 +566,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteSuspicious
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_suspicious
@@ -636,7 +575,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteWorried
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_worried
@@ -646,7 +584,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteSmirking
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_smirking
@@ -656,7 +593,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteCryed
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_cryed
@@ -666,7 +602,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteLaughing
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_laughing
@@ -676,7 +611,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteQuestioningly
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_questioningly
@@ -686,7 +620,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenCuteUnsurprised
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_cute_unsurprised
@@ -696,7 +629,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenPacifist1
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_pacifist_1
@@ -706,7 +638,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenPacifist2
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_pacifist_2
@@ -716,7 +647,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenAscended
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_ascended
@@ -726,7 +656,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCScreenMonoeyeAlt
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_monoeye_alt
@@ -736,7 +665,6 @@
   speciesRestriction: []
   id: EchoIPCScreenBroken
   bodyPart: FacialHair
-  markingCategory: FacialHair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_screens.rsi
       state: ipc_screen_broken

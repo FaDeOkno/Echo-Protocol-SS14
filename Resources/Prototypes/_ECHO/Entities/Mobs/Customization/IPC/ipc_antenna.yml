@@ -4,7 +4,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaTv
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_tv
@@ -13,7 +12,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaTesla
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_tesla
@@ -22,7 +20,6 @@
 #   groupWhitelist: [EchoIPC]
 #   id: EchoIPCAntennaLightb
 #   bodyPart: Hair
-#   markingCategory: Hair
 #   sprites:
 #     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
 #       state: ipc_antenna_lightb
@@ -31,7 +28,6 @@
 #   groupWhitelist: [EchoIPC]
 #   id: EchoIPCAntennaLight
 #   bodyPart: Hair
-#   markingCategory: Hair
 #   sprites:
 #     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
 #       state: ipc_antenna_light
@@ -40,7 +36,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaCyberhead
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_cyberhead
@@ -49,7 +44,6 @@
 #   groupWhitelist: [EchoIPC]
 #   id: EchoIPCAntennaSidelights
 #   bodyPart: Hair
-#   markingCategory: Hair
 #   sprites:
 #     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
 #       state: ipc_antenna_sidelights
@@ -58,7 +52,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaAntlers
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_antlers
@@ -67,7 +60,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaDroneeyes
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_droneeyes
@@ -76,7 +68,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaCrowned
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_crowned
@@ -85,7 +76,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaTowers
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_towers
@@ -96,7 +86,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaDuality
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_duality
@@ -105,7 +94,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaHoloaura
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_holo_aura
@@ -114,7 +102,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaWireless
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_wireless_connection
@@ -123,7 +110,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaSmallEye
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_eye
@@ -132,7 +118,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaModule
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_module
@@ -141,7 +126,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaFox
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_fox
@@ -152,7 +136,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaCat
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_cat
@@ -161,7 +144,6 @@
   groupWhitelist: [EchoIPC]
   id: EchoIPCAntennaTvAlt
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
     - sprite: _ECHO/Mobs/Customization/Ipc/ipc_antenna.rsi
       state: ipc_antenna_tvalt
