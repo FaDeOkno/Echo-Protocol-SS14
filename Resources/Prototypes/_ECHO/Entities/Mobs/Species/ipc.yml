@@ -153,14 +153,6 @@
       0.5: 0.75
       0.2: 0.5
       0: 0.35
-  - type: LowBatterySignal
-    interval: 12
-    othersPopup: silicon-power-low
-    selfPopup: silicon-power-low
-    sound:
-      path: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"
-      params:
-        volume: -2
   - type: ScreenGlitch
   - type: ScreenGlitchOnEmp
     chroma: 3
