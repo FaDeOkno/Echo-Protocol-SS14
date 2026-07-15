@@ -500,6 +500,26 @@ public sealed class MarkingsViewModel
 
         MarkingsChanged?.Invoke(organ, layer);
     }
+
+    // ECHO-Tweak-start
+    // Marking selector whitelists
+
+    private HashSet<HumanoidVisualLayers>? _layersWhitelist;
+    public HashSet<HumanoidVisualLayers>? LayersWhitelist
+    {
+        get => _layersWhitelist;
+        set
+        {
+            _layersWhitelist = value;
+            EnforcementsChanged?.Invoke();
+        }
+    }
+
+    private bool IsLayerAllowed(HumanoidVisualLayers layer)
+    {
+        return _layersWhitelist == null || _layersWhitelist.Contains(layer);
+    }
+    // ECHO-Tweak-end
 }
 
 /// <summary>
