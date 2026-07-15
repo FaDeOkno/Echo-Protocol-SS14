@@ -1,4 +1,4 @@
-ent-EchoOrganIPCBrain = позитронный мозг КПБ
+ent-EchoOrganBrainIPC = позитронный мозг КПБ
     .desc = Источник такого же количества противоречий и споров, как и существование души.
     .suffix = { "КПБ" }
 ent-EchoOrganIPCEyes = модуль зрения КПБ

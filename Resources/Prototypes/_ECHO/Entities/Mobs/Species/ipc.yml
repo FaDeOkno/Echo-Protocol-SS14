@@ -103,15 +103,15 @@
     allowedLayers: [ FacialHair ]
     organs: [ Head ]
     radialOptions:
-    - optionName: customizable-appearance-screen-change
+    - optionName: midround-customization-screen-change
       icon:
        sprite: _ECHO/Interface/Actions/actions_ipc.rsi
        state: screen
       uiKey: enum.MidroundCustomizationAppearanceUiKey.Key
-    - optionName: customizable-appearance-barks-change
+    - optionName: midround-customization-barks-change
       icon: Interface/Actions/scream.png
       uiKey: enum.MidroundCustomizatioBarksUiKey.Key
-    - optionName: customizable-appearance-flashlight-change
+    - optionName: midround-customization-flashlight-change
       icon:
         sprite: Objects/Tools/flashlight.rsi
         state: flashlight
