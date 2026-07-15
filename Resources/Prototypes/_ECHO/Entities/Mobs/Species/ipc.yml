@@ -236,14 +236,6 @@
         type: CustomizableAppearanceBoundUserInterface
       enum.MidroundCustomizatioBarksUiKey.Key:
         type: CustomizableBarksBoundUserInterface
-  - type: Inventory
-    templateId: ipc
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -251,6 +243,7 @@
   name: human appearance
   components:
   - type: Inventory
+    templateId: ipc
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -275,4 +268,4 @@
       Ears: EchoOrganIPCEars
       Heart: EchoOrganIPCPump
   - type: HumanoidProfile
-    species: Human
+    species: IPC
