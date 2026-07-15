@@ -40,5 +40,6 @@ public sealed class CustomizableAppearanceBoundUserInterface : BoundUserInterfac
         _markingsModel.OrganData = data.OrganMarkingData;
         _markingsModel.OrganProfileData = data.OrganProfileData;
         _markingsModel.Markings = data.AppliedMarkings;
+        _markingsModel.LayersWhitelist = data.AllowedLayers;
     }
 }

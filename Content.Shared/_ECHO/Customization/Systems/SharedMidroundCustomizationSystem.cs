@@ -104,12 +104,7 @@ public abstract class SharedMidroundCustomizationSystem : EntitySystem
         foreach (var marking in markings)
         {
             if (!ent.Comp.Organs.Contains(marking.Key))
-            {
                 profiles.Remove(marking.Key);
-                continue;
-            }
-
-            marking.Value.Layers.IntersectWith(ent.Comp.AllowedLayers);
         }
 
         foreach (var appliedPair in applied)
@@ -123,7 +118,7 @@ public abstract class SharedMidroundCustomizationSystem : EntitySystem
         if (TryComp<SpeechBarksComponent>(ent.Owner, out var barks))
             currentBark = barks.Data;
 
-        var state = new MidroundCustomizationBoundUserInterfaceState(profiles, markings, applied, currentBark);
+        var state = new MidroundCustomizationBoundUserInterfaceState(profiles, markings, applied, ent.Comp.AllowedLayers, currentBark);
         _ui.SetUiState(ent.Owner, MidroundCustomizationAppearanceUiKey.Key, state);
         _ui.SetUiState(ent.Owner, MidroundCustomizatioBarksUiKey.Key, state);
     }

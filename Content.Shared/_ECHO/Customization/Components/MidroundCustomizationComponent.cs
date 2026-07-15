@@ -10,7 +10,7 @@ namespace Content.Shared._ECHO.Customization;
 public sealed partial class MidroundCustomizationComponent : Component
 {
     [DataField(required: true)]
-    public List<HumanoidVisualLayers> AllowedLayers = new();
+    public HashSet<HumanoidVisualLayers> AllowedLayers = new();
 
     [DataField(required: true)]
     public HashSet<ProtoId<OrganCategoryPrototype>> Organs;
