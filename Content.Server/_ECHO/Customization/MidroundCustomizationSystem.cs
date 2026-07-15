@@ -47,6 +47,21 @@ public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSys
         if (args.Cancelled)
             return;
 
+        foreach (var (organ, markings) in args.Markings)
+        {
+            if (!ent.Comp.Organs.Contains(organ))
+            {
+                args.Markings.Remove(organ);
+                continue;
+            }
+
+            foreach (var layer in markings.Keys)
+            {
+                if (!ent.Comp.AllowedLayers.Contains(layer))
+                    markings.Remove(layer);
+            }
+        }
+
         VisualBody.ApplyMarkings(ent.Owner, args.Markings);
         UpdateUi(ent);
     }
