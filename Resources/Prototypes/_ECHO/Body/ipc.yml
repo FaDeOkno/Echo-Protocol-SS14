@@ -58,7 +58,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+    sprite: _ECHO/Mobs/Species/IPC/organs.rsi
 
 - type: entity
   parent: EchoOrganIPC
