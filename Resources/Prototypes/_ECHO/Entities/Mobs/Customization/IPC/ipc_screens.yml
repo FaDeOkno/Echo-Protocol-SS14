@@ -1,8 +1,5 @@
-# Simple Station
-
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenStatic
   bodyPart: FacialHair
   sprites:
@@ -21,7 +18,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenBreakout
   bodyPart: FacialHair
   sprites:
@@ -31,7 +27,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenEight
   bodyPart: FacialHair
   sprites:
@@ -86,7 +81,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenOrange
   bodyPart: FacialHair
   sprites:
@@ -114,7 +108,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenShower
   bodyPart: FacialHair
   sprites:
@@ -124,7 +117,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenYellow
   bodyPart: FacialHair
   sprites:
@@ -134,7 +126,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenScroll
   bodyPart: FacialHair
   sprites:
@@ -153,7 +144,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenRgb
   bodyPart: FacialHair
   sprites:
@@ -163,7 +153,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenGlider
   bodyPart: FacialHair
   sprites:
@@ -173,7 +162,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenRainbowhoriz
   bodyPart: FacialHair
   sprites:
@@ -183,7 +171,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenBsod
   bodyPart: FacialHair
   sprites:
@@ -193,7 +180,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenText
   bodyPart: FacialHair
   sprites:
@@ -203,7 +189,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenSinewave
   bodyPart: FacialHair
   sprites:
@@ -213,7 +198,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenSquarewave
   bodyPart: FacialHair
   sprites:
@@ -223,7 +207,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenEcgwave
   bodyPart: FacialHair
   sprites:
@@ -260,7 +243,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenLoading
   bodyPart: FacialHair
   sprites:
@@ -270,7 +252,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenWindowsxp
   bodyPart: FacialHair
   sprites:
@@ -280,7 +261,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenTetris
   bodyPart: FacialHair
   sprites:
@@ -290,7 +270,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenTv
   bodyPart: FacialHair
   sprites:
@@ -300,7 +279,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenTextdrop
   bodyPart: FacialHair
   sprites:
@@ -310,7 +288,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenStars
   bodyPart: FacialHair
   sprites:
@@ -320,7 +297,6 @@
 
 - type: marking
   groupWhitelist: [EchoIPC]
-  #sponsorOnly: true # Corvax-Sponsors
   id: EchoIPCScreenRainbowdiag
   bodyPart: FacialHair
   sprites:
