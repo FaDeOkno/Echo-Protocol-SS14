@@ -53,8 +53,10 @@
       intensity: 0
     - type: RadiationOnDamage
       intensityPerDamage:
-        Blunt: .012
-      maxIntensity: 0.75
+        Blunt: .03
+        Slash: .03
+        Piercing: .02
+      maxIntensity: 2.75
 
     # Basically remove everything battery related
   - !type:RemoveComponentSpecial
