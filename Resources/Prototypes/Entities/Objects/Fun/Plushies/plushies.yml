@@ -217,6 +217,7 @@
   - type: PointLight
     radius: 1.5
     energy: 2
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: RgbLightController
     layers: [ 0 ]
   - type: Item

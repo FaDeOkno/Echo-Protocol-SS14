@@ -67,9 +67,9 @@
   - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
-    radius: 3
+    radius: 7 # ECHO-Tweak: 3 -> 7
     energy: 1
-    mask: /Textures/Effects/LightMasks/cone.png
+    mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png  # ECHO-Tweak: /Textures/Effects/LightMasks/cone.png -> /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
     autoRot: true
     netsync: false
   - type: Appearance
@@ -216,9 +216,9 @@
   - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
-    radius: 3
+    radius: 6 # ECHO-Tweak: 3 -> 6
     energy: 2
-    mask: /Textures/Effects/LightMasks/cone.png
+    mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png  # ECHO-Tweak: /Textures/Effects/LightMasks/cone.png -> /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
     autoRot: true
     netsync: false
   - type: Appearance

@@ -45,6 +45,7 @@
     radius: 3
     energy: 2
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_b.png # ECHO-Tweak: добавлена маска света
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -158,6 +159,7 @@
     radius: 2
     energy: 0.5
     color: "#FFFFEE"
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: Flash
     flashOnMelee: false
     flashOnUse: false
@@ -219,6 +221,7 @@
     enabled: false
     radius: 8
     energy: 5
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: ItemSlots
     slots:
       cell_slot:

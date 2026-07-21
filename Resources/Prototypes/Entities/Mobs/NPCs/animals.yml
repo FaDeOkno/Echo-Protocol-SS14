@@ -2019,6 +2019,7 @@
     radius: 5
     energy: 5
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: RadiationSource
     intensity: 0.5
     slope: 0.3

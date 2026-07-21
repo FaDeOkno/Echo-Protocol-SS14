@@ -20,6 +20,7 @@
     color: "#3db83b"
     castShadows: false
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: AccessReader
     access: [["Engineering"]]
   - type: Sprite

@@ -104,9 +104,10 @@
     - BypassInteractionRangeChecks
   - type: PointLight
     netsync: false
-    radius: 6
+    radius: 7 # ECHO-Tweak: 6 -> 7
     castShadows: false
     enabled: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   # ECHO-Tweak-start: better ghost movement
   - type: CEZPhysics
     ignoreHighGround: true
