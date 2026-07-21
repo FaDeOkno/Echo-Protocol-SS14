@@ -41,6 +41,7 @@
     - type: FireVisuals
       sprite: Objects/Misc/candles.rsi
       normalState: fire-big
+      mask: /Textures/_ECHO/Effects/LightMasks/circle_d.png # ECHO-Tweak: добавлена маска света
     - type: ToggleableVisuals
       spriteLayer: null
       inhandVisuals:
@@ -286,8 +287,9 @@
         shader: unshaded
   - type: PointLight
     color: "#e39c40"
-    radius: 2.5
+    radius: 3.5 # ECHO-Tweak: 2.5 -> 3.5
     power: 10
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_d.png # ECHO-Tweak: добавлена маска света
 
 - type: entity
   name: magic red candle
