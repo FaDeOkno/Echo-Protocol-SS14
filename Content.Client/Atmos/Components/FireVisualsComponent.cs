@@ -39,4 +39,7 @@ public sealed partial class FireVisualsComponent : Component
     ///     the burning entity as entities don't support having multiple point-lights.
     /// </summary>
     public EntityUid? LightEntity;
+
+    [DataField("mask")]
+    public string? LightMask;
 }

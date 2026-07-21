@@ -92,6 +92,9 @@ public sealed class FireVisualizerSystem : VisualizerSystem<FireVisualsComponent
         _lights.SetRadius(component.LightEntity.Value, Math.Clamp(1.5f + component.LightRadiusPerStack * fireStacks, 0f, component.MaxLightRadius), light);
         _lights.SetEnergy(component.LightEntity.Value, Math.Clamp(1 + component.LightEnergyPerStack * fireStacks, 0f, component.MaxLightEnergy), light);
 
+        // ECHO-Tweak: Light masks
+        _lights.SetMask(component.LightMask, light);
+
         // TODO flickering animation? Or just add a noise mask to the light? But that requires an engine PR.
     }
 }
