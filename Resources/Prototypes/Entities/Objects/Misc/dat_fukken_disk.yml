@@ -17,13 +17,9 @@
   - type: WarpPoint
     follow: true
     location: nuke disk
-    blacklist:
-      tags:
-      - GhostOnlyWarp
   - type: Tag
     tags:
     - HighRiskItem
-    - GhostOnlyWarp
   - type: StealTarget
     stealGroup: NukeDisk
   # ECHO-Tweak-Start
@@ -42,7 +38,7 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -6
-  # ECHO-Tweak-Start
+  # ECHO-Tweak-End
 
 - type: entity
   name: nuclear authentication disk
@@ -75,4 +71,4 @@
       path: /Audio/_ECHO/Items/Handling/disk_drop.ogg
       params:
         volume: -6
-  # ECHO-Tweak-Start
+  # ECHO-Tweak-End

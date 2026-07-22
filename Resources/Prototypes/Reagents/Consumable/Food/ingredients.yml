@@ -83,6 +83,37 @@
       metabolites:
         Protein: 2
 
+# Pe-Tweak - Начало
+- type: reagent
+  id: Everyspice
+  name: reagent-name-everyspice
+  group: Foods
+  desc: reagent-desc-everyspice
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: spicy
+  color: brown
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Nutriment: 0.1
+
+- type: reagent
+  id: Raisins
+  name: reagent-name-raisins
+  group: Foods
+  desc: reagent-desc-raisins
+  physicalDesc: reagent-physical-desc-chewy
+  flavor: raisins
+  color: brown
+  recognizable: true
+  metabolisms:
+    Digestion:
+      metabolites:
+        Sugar: 0.8
+        Nutriment: 0.2
+# Pe-Tweak - Конец
+
 - type: reagent
   id: Blackpepper
   name: reagent-name-blackpepper

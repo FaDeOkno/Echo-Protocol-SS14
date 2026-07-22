@@ -8,3 +8,10 @@
   skinColoration: HumanToned
 # ECHO-Tweak end 
 # Добавил просто упоминание дворфов, чтобы тестер не ругался (да и локалка запускалась...)
+  defaultSoundsBySex:
+  - UnisexDwarf
+  - FemaleDwarf
+  - UnisexDwarf
+  voices:
+  - UnisexDwarf
+  - FemaleDwarf

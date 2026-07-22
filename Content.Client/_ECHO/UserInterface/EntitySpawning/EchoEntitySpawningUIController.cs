@@ -13,11 +13,11 @@ using static Robust.Client.UserInterface.Controls.LineEdit;
 
 namespace Content.Client._ECHO.UserInterface.EntitySpawning;
 
-public sealed class EchoEntitySpawningUIController : UIController
+public sealed partial class EchoEntitySpawningUIController : UIController
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPlacementManager _placement = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPlacementManager _placement = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
 
     private EchoEntitySpawnWindow? _window;
     private readonly List<EntityPrototype> _shownEntities = new();

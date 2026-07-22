@@ -12,8 +12,8 @@ namespace Content.Shared._ECHO.Posing;
 
 public abstract partial class SharedPosingSystem : EntitySystem
 {
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
 
     public override void Initialize()
     {
@@ -108,8 +108,8 @@ public abstract partial class SharedPosingSystem : EntitySystem
         posingComp.Posing = !posingComp.Posing;
         _actionBlocker.UpdateCanMove(uid);
 
-        posingComp.CurrentAngle = Angle.Zero;
-        posingComp.CurrentOffset = Vector2.Zero;
+        posingComp.TargetAngle = Angle.Zero;
+        posingComp.TargetOffset = Vector2.Zero;
 
         ClientTogglePosing(uid, posingComp);
         Dirty(uid, posingComp);
@@ -120,12 +120,12 @@ public abstract partial class SharedPosingSystem : EntitySystem
         if (!Resolve(uid, ref posingComp, false) || !posingComp.Posing)
             return;
 
-        var previousOffset = posingComp.CurrentOffset;
+        var previousOffset = posingComp.TargetOffset;
 
-        posingComp.CurrentOffset += offset;
-        posingComp.CurrentOffset = Vector2.Clamp(posingComp.CurrentOffset, -posingComp.OffsetLimits, posingComp.OffsetLimits);
+        posingComp.TargetOffset += offset;
+        posingComp.TargetOffset = Vector2.Clamp(posingComp.TargetOffset, -posingComp.OffsetLimits, posingComp.OffsetLimits);
 
-        if (posingComp.CurrentOffset.Equals(previousOffset))
+        if (posingComp.TargetOffset.Equals(previousOffset))
             return;
 
         Dirty(uid, posingComp);
@@ -136,12 +136,12 @@ public abstract partial class SharedPosingSystem : EntitySystem
         if (!Resolve(uid, ref posingComp, false) || !posingComp.Posing)
             return;
 
-        var previousAngle = posingComp.CurrentAngle;
+        var previousAngle = posingComp.TargetAngle;
 
-        var newAngle = posingComp.CurrentAngle.Degrees + angle;
-        posingComp.CurrentAngle = Angle.FromDegrees(Math.Clamp(newAngle, -posingComp.AngleLimits, posingComp.AngleLimits));
+        var newAngle = posingComp.TargetAngle.Degrees + angle;
+        posingComp.TargetAngle = Angle.FromDegrees(Math.Clamp(newAngle, -posingComp.AngleLimits, posingComp.AngleLimits));
 
-        if (posingComp.CurrentAngle.Equals(previousAngle))
+        if (posingComp.TargetAngle.Equals(previousAngle))
             return;
 
         Dirty(uid, posingComp);

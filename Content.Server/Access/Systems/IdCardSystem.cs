@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
-using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
@@ -9,21 +8,21 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Kitchen;
+using Content.Shared.Kitchen.Components; // Pe-Tweak - добавлено using Content.Shared.Kitchen.Components;
 using Content.Shared.Popups;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.Kitchen.EntitySystems;
+using BeingMicrowavedEvent = Content.Shared.Kitchen.BeingMicrowavedEvent; // Pe-Tweak - добавлено using BeingMicrowavedEvent = Content.Shared.Kitchen.BeingMicrowavedEvent;
 
 namespace Content.Server.Access.Systems;
 
-public sealed class IdCardSystem : SharedIdCardSystem
+public sealed partial class IdCardSystem : SharedIdCardSystem
 {
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly MicrowaveSystem _microwave = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private MicrowaveSystem _microwave = default!;
 
     public override void Initialize()
     {
@@ -42,7 +41,8 @@ public sealed class IdCardSystem : SharedIdCardSystem
             float randomPick = _random.NextFloat();
 
             // if really unlucky, burn card
-            if (randomPick <= 0.15f)
+            // Pe-Tweak было -   if (randomPick <= 0.15f), стало - if (args.BeingHeated && randomPick <= 0.15f)
+            if (args.BeingHeated && randomPick <= 0.15f) // Pe-Tweak: Если айди не нагрето, то оно не повреждается
             {
                 TryComp(uid, out TransformComponent? transformComponent);
                 if (transformComponent != null)
@@ -57,6 +57,15 @@ public sealed class IdCardSystem : SharedIdCardSystem
                 QueueDel(uid);
                 return;
             }
+
+
+            // Pe-Tweak Начало - ID доступ меняется только с радиацией
+            if (!args.BeingIrradiated)
+            {
+                return;
+            }
+            // Pe-Tweak Конец
+
 
             //Explode if the microwave can't handle it
             if (!micro.CanMicrowaveIdsSafely)
@@ -82,7 +91,7 @@ public sealed class IdCardSystem : SharedIdCardSystem
             }
 
             // Give them a wonderful new access to compensate for everything
-            var ids = _prototypeManager.EnumeratePrototypes<AccessLevelPrototype>().Where(x => x.CanAddToIdCard).ToArray();
+            var ids = ProtoMan.EnumeratePrototypes<AccessLevelPrototype>().Where(x => x.CanAddToIdCard).ToArray();
 
             if (ids.Length == 0)
                 return;
