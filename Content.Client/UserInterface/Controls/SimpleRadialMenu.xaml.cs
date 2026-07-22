@@ -19,10 +19,10 @@ public sealed partial class SimpleRadialMenu : RadialMenu
 {
     private EntityUid? _attachMenuToEntity;
 
-    [Dependency] private readonly IClyde _clyde = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;    // ECHO-Tweak
+    [Dependency] private IClyde _clyde = default!;
+    [Dependency] private IEntityManager _entManager = default!;
+    [Dependency] private IInputManager _inputManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;    // ECHO-Tweak
 
     public SimpleRadialMenu()
     {
