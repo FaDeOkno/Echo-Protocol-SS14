@@ -14,9 +14,9 @@
     equippedPrefix: off
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png  # ECHO-Tweak: /Textures/Effects/LightMasks/cone.png -> /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
     autoRot: true
-    radius: 7
+    radius: 11  # ECHO-Tweak: 7 -> 11
     netsync: false
   - type: Appearance
   - type: HandheldLight

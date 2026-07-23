@@ -36,8 +36,9 @@
   - type: PointLight
     color: OrangeRed
     radius: 3
-    energy: 1
+    energy: 3 # ECHO-Tweak: 1 -> 3
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_rings.png # ECHO-Tweak: добавлена маска света
 
 - type: entity
   id: PortalBlue
@@ -49,9 +50,10 @@
   - type: PointLight
     color: SkyBlue
     radius: 3
-    energy: 1
+    energy: 3 # ECHO-Tweak: 1 -> 3
     netsync: false
-    
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_rings.png # ECHO-Tweak: добавлена маска света
+
 - type: entity
   id: PortalArtifact
   parent: BasePortal
@@ -62,8 +64,9 @@
   - type: PointLight
     color: "#ed85c2"
     radius: 3
-    energy: 1
+    energy: 3 # ECHO-Tweak: 1 -> 3
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_rings.png # ECHO-Tweak: добавлена маска света
   - type: TimedDespawn
     lifetime: 1
   - type: Portal
@@ -81,9 +84,10 @@
     - state: portal
   - type: PointLight
     color: SkyBlue
-    radius: 3
+    radius: 5 # ECHO-Tweak: 3 -> 5
     energy: 1
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_rings.png # ECHO-Tweak: добавлена маска света
 
 - type: entity
   id: PortalGatewayOrange
@@ -97,9 +101,10 @@
     - state: portal
   - type: PointLight
     color: OrangeRed
-    radius: 3
+    radius: 5 # ECHO-Tweak: 3 -> 5
     energy: 1
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_rings.png # ECHO-Tweak: добавлена маска света
 
 - type: entity
   id: ShadowPortal
@@ -116,8 +121,9 @@
   - type: PointLight
     color: "#793a80dd"
     radius: 3
-    energy: 1
+    energy: 3 # ECHO-Tweak: 1 -> 3
     netsync: false
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_rings.png # ECHO-Tweak: добавлена маска света
   - type: AmbientSound
     range: 6
     volume: -3

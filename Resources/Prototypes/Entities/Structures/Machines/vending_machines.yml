@@ -95,6 +95,7 @@
     enabled: false
     castShadows: false
     radius: 1.5
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_b.png # ECHO-Tweak: добавлена маска света
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200

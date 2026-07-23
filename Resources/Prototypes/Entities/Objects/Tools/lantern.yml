@@ -40,9 +40,10 @@
     - type: PointLight
       enabled: false
       radius: 3
-      energy: 2.5
+      energy: 4.5 # ECHO-Tweak: 2.5 -> 4.5
       color: "#FFC458"
       netsync: false
+      mask: /Textures/_ECHO/Effects/LightMasks/circle_c.png # ECHO-Tweak: добавлена маска света
     - type: Appearance
     - type: ToggleableVisuals
       spriteLayer: light

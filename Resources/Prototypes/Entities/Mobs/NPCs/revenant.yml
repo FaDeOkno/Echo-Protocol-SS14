@@ -61,6 +61,7 @@
     color: MediumPurple
     radius: 2
     softness: 1
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_b.png # ECHO-Tweak: добавлена маска света
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:

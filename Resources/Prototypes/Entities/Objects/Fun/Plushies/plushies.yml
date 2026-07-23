@@ -206,8 +206,9 @@
   description: A cute toy that resembles a bee plushie while you're on LSD.
   components:
   - type: PointLight
-    radius: 1.5
+    radius: 2.5 # ECHO-Tweak: 1.5 -> 2.5
     energy: 2
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_c.png # ECHO-Tweak: добавлена маска света
   - type: RgbLightController
     layers: [ 0 ]
   - type: Item
