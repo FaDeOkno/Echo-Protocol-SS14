@@ -22,7 +22,7 @@ public abstract partial class SharedStationSpawningSystem : EntitySystem
     [Dependency] private MetaDataSystem _metadata = default!;
     [Dependency] private SharedStorageSystem _storage = default!;
     [Dependency] private SharedTransformSystem _xformSystem = default!;
-    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private SharedContainerSystem _container = default!;   // ECHO-Tweak
 
     [Dependency] private EntityQuery<HandsComponent> _handsQuery = default!;
     [Dependency] private EntityQuery<InventoryComponent> _inventoryQuery = default!;
