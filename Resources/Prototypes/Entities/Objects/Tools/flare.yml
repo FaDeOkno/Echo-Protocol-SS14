@@ -49,7 +49,7 @@
     enabled: false
     color: "#FF8080"
     radius: 1.0
-    energy: 12.0
+    energy: 12.0 # ECHO-Tweak: 9.0 -> 12.0
     netsync: false
     mask: /Textures/_ECHO/Effects/LightMasks/smoke.png # ECHO-Tweak: добавлена маска света
   - type: IgnitionSource
