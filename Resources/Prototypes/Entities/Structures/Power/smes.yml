@@ -73,6 +73,7 @@
       energy: 3.0
       color: "#c9c042"
       castShadows: false
+      mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
     - type: WiresPanel
     - type: WiresVisuals
     - type: Machine

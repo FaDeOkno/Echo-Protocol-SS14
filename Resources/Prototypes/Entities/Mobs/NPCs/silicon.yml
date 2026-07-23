@@ -420,9 +420,9 @@
   - type: UnpoweredFlashlight
   - type: PointLight
     enabled: false
-    radius: 3.5
+    radius: 8 # ECHO-Tweak: 3.5 -> 8
     softness: 2
-    mask: /Textures/Effects/LightMasks/cone.png
+    mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png  # ECHO-Tweak: /Textures/Effects/LightMasks/cone.png -> /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
     autoRot: true
   - type: FootstepModifier
     footstepSoundCollection:

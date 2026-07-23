@@ -48,4 +48,11 @@ public sealed partial class FireVisualsComponent : Component
     /// </summary>
     [DataField]
     public ProtoId<DisplacementDataPrototype>? CurrentDisplacement;
+    
+    /// </summary>
+    /// ECHO-Tweak
+    /// Применяемая маска света
+    /// </summary>
+    [DataField("mask")]
+    public string? LightMask;
 }

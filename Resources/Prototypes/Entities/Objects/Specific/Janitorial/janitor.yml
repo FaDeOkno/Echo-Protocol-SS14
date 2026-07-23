@@ -281,6 +281,8 @@
     radius: 1.5
     energy: 0.75
     color: "#ffc20e"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50

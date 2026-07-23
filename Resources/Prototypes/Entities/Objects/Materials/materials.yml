@@ -319,10 +319,10 @@
     slots:
       - HEAD
   - type: PointLight
-    radius: 1.2
+    radius: 1.7 # ECHO-Tweak: 1.2 -> 1.7
     energy: 2.7
     color: "#4faffb"
-    slots:
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_b.png # ECHO-Tweak: добавлена маска света
 
 - type: entity
   parent: MaterialBase

@@ -45,6 +45,8 @@
     radius: 2
     energy: 2.5
     color: "#47f8ff"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash
@@ -77,6 +79,8 @@
     radius: 2
     energy: 2.5
     color: "#ffde46"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash
@@ -93,6 +97,8 @@
     radius: 2
     energy: 2.5
     color: "#ff8227"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash
@@ -109,6 +115,8 @@
     radius: 2
     energy: 2.5
     color: "#363636"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash
@@ -125,6 +133,8 @@
     radius: 2
     energy: 2.5
     color: "#ff66cc"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash
@@ -141,6 +151,8 @@
     radius: 2
     energy: 2.5
     color: "#52ff39"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash
@@ -157,6 +169,8 @@
     radius: 2
     energy: 2.5
     color: "#fb4747"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
+    autoRot: true # ECHO-Tweak
   - type: Tag
     tags:
       - Trash

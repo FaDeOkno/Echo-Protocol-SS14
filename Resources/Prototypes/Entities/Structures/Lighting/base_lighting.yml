@@ -416,6 +416,7 @@
     state: base
   - type: PointLight
     enabled: true
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: PoweredLight
     hasLampOnSpawn: LightBulb
   - type: DamageOnInteract

@@ -7,7 +7,8 @@
     color: "#793a80dd"
   - type: PointLight
     color: "#793a80dd"
-    radius: 1.1
+    radius: 2 # ECHO-Tweak: 1.1 -> 2
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_b.png # ECHO-Tweak: добавлена маска света
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 2
@@ -36,7 +37,7 @@
     speedModifierThresholds:
       60: 0.7
       80: 0.5
-      
+
 - type: entity
   name: shadow cat
   parent: BaseShadowMob

@@ -56,9 +56,9 @@
     radius: 1.5
     energy: 3.0
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_c.png  # ECHO-Tweak: /Textures/Effects/LightMasks/cone.png -> /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
     autoRot: true
-    offset: "0, 0.4" # shine from the top, not bottom of the computer
+    # offset: "0, 0.4" # shine from the top, not bottom of the computer # ECHO-Tweak: не нужно смещать новую маску
     castShadows: false
   - type: EmitSoundOnUIOpen
     sound:

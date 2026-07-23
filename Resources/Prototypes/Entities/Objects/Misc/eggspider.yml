@@ -16,8 +16,9 @@
   - type: Item
     size: Small
   - type: PointLight
-    radius: 1.5
+    radius: 2.5 # ECHO-Tweak: 1.5 -> 2.5
     energy: 3
     color: "#4faffb"
+    mask: /Textures/_ECHO/Effects/LightMasks/star.png # ECHO-Tweak: добавлена маска света
   - type: StaticPrice
     price: 500

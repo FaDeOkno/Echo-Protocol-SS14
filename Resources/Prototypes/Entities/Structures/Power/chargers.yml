@@ -131,6 +131,7 @@
     radius: 1.5
     color: "#03fc4e"
     energy: 0.7
+    mask: /Textures/_ECHO/Effects/LightMasks/circle_a.png # ECHO-Tweak: добавлена маска света
   - type: Charger
     chargeRate: 50
   - type: Sprite
