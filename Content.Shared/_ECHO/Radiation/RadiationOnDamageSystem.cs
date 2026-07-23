@@ -3,7 +3,7 @@ using Content.Shared.Radiation.Components;
 
 namespace Content.Shared._ECHO.Radiation;
 
-public sealed class RadiationOnDamageSystem : EntitySystem
+public sealed partial class RadiationOnDamageSystem : EntitySystem
 {
     [Dependency] private DamageableSystem _damageable = default!;
 

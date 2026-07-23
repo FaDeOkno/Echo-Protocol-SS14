@@ -3,7 +3,7 @@ using Content.Shared.Lock;
 
 namespace Content.Shared._ECHO.Lock;
 
-public sealed class SlotRequiresLockSystem : EntitySystem
+public sealed partial class SlotRequiresLockSystem : EntitySystem
 {
     [Dependency] private ItemSlotsSystem _slots = default!;
 

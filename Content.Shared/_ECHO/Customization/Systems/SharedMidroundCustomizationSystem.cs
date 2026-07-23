@@ -10,10 +10,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._ECHO.Customization;
 
-public abstract class SharedMidroundCustomizationSystem : EntitySystem
+public abstract partial class SharedMidroundCustomizationSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedVisualBodySystem VisualBody = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] protected SharedVisualBodySystem VisualBody = default!;
+    [Dependency] private SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {

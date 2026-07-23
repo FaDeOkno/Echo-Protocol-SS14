@@ -2,7 +2,7 @@ using Content.Shared.Popups;
 
 namespace Content.Shared._ECHO.Light;
 
-public abstract class SharedPointLightFollowLayerColorSystem : EntitySystem
+public abstract partial class SharedPointLightFollowLayerColorSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
 

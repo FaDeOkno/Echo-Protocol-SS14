@@ -7,7 +7,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Shared._ECHO.Battery;
 
-public sealed class ChargeMoveSpeedThresholdsSystems : EntitySystem
+public sealed partial class ChargeMoveSpeedThresholdsSystems : EntitySystem
 {
     [Dependency] private MovementSpeedModifierSystem _moveSpeedModifiers = default!;
     [Dependency] private PowerCellSystem _powerCell = default!;
