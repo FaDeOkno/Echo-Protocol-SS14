@@ -145,10 +145,9 @@
     enabled: false
     color: "#ffffff"
     mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
-    offset: 0,-0.3
     autoRot: true
-    radius: 6
-    energy: 3
+    radius: 9
+    energy: 2
   - type: LightBehaviour
     behaviours:
       - !type:FadeBehaviour
@@ -194,8 +193,8 @@
   - type: ChargeMoveSpeedThresholds
     speedModifierThresholds:
       0.7: 1
-      0.5: 0.75
-      0.2: 0.5
+      0.5: 0.85
+      0.2: 0.65
       0: 0.35
   - type: ScreenGlitch
   - type: ScreenGlitchOnEmp
