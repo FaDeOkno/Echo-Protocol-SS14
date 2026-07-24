@@ -15,3 +15,9 @@
   youngAge: 25
   sexes:
   - Unsexed
+  defaultSoundsBySex:
+  - UnisexIPC
+  - UnisexIPC
+  - UnisexIPC
+  voices:
+  - UnisexIPC
