@@ -7,9 +7,9 @@ using Robust.Client.UserInterface.Controllers;
 namespace Content.Client._ECHO.Customization.UI;
 
 [UsedImplicitly]
-public sealed class MidroundCustomizationRadialMenuController : UIController
+public sealed partial class MidroundCustomizationRadialMenuController : UIController
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     private SimpleRadialMenu? _menu;
 
