@@ -221,7 +221,6 @@
     - SiliconEmotes
     - Unimplantable
     - AnomalyHost
-    - CannotSuicide
   - type: UserInterface
     interfaces:
       enum.VoiceMaskUIKey.Key:
