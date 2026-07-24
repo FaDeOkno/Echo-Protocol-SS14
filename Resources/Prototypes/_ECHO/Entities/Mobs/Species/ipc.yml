@@ -144,11 +144,11 @@
   - type: PointLight
     enabled: false
     color: "#ffffff"
-    mask: /Textures/Effects/LightMasks/cone.png
+    mask: /Textures/_ECHO/Effects/LightMasks/cone_composed_b.png
     offset: 0,-0.3
     autoRot: true
-    radius: 3
-    energy: 2
+    radius: 6
+    energy: 3
   - type: LightBehaviour
     behaviours:
       - !type:FadeBehaviour
