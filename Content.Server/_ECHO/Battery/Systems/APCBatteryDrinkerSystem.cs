@@ -10,11 +10,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._ECHO.Battery;
 
-public sealed class APCBatteryDrinkerSystem : EntitySystem
+public sealed partial class APCBatteryDrinkerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedBatterySystem _battery = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedBatterySystem _battery = default!;
+    [Dependency] private PowerCellSystem _powerCell = default!;
 
     public override void Initialize()
     {

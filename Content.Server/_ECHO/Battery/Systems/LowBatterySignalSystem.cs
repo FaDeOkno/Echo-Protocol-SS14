@@ -7,7 +7,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._ECHO.Battery;
 
-public sealed class LowBatterySignalSystem : EntitySystem
+public sealed partial class LowBatterySignalSystem : EntitySystem
 {
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private BatterySystem _battery = default!;

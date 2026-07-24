@@ -10,11 +10,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._ECHO.Customization;
 
-public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSystem
+public sealed partial class MidroundCustomizationSystem : SharedMidroundCustomizationSystem
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly DoAfterSystem _doAFter = default!;
-    [Dependency] private readonly SpeechBarksSystem _barks = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private DoAfterSystem _doAFter = default!;
+    [Dependency] private SpeechBarksSystem _barks = default!;
 
     public override void Initialize()
     {

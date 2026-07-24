@@ -18,6 +18,6 @@ public abstract partial class SharedPointLightFollowLayerColorSystem : EntitySys
         ent.Comp.Enabled = !ent.Comp.Enabled;
         Dirty(ent);
 
-        _popup.PopupPredicted(Loc.GetString($"point-light-follow-toggle-{ent.Comp.Enabled.ToString().ToLower()}"), "", ent.Owner, ent.Owner);
+        _popup.PopupEntity(Loc.GetString($"point-light-follow-toggle-{ent.Comp.Enabled.ToString().ToLower()}"), "", ent.Owner, ent.Owner);
     }
 }

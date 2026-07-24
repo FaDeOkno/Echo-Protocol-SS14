@@ -8,7 +8,7 @@ using Robust.Shared.Containers;
 
 namespace Content.Client._ECHO.Light;
 
-public sealed class PointLightFollowLayerColorSystem : SharedPointLightFollowLayerColorSystem
+public sealed partial class PointLightFollowLayerColorSystem : SharedPointLightFollowLayerColorSystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
     [Dependency] private PointLightSystem _pointLight = default!;

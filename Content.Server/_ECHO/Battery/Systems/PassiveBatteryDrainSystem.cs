@@ -3,7 +3,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._ECHO.Battery;
 
-public sealed class PassiveBatteryDrainSystem : EntitySystem
+public sealed partial class PassiveBatteryDrainSystem : EntitySystem
 {
     [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private IGameTiming _timing = default!;

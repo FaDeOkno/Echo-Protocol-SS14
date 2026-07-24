@@ -5,7 +5,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._ECHO.Customization;
 
-public sealed class MidroundCustomizationSystem : SharedMidroundCustomizationSystem
+public sealed partial class MidroundCustomizationSystem : SharedMidroundCustomizationSystem
 {
     [Dependency] private IUserInterfaceManager _ui = default!;
     [Dependency] private IGameTiming _timing = default!;

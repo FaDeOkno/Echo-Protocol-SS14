@@ -5,7 +5,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Echo.Postprocessing;
 
-public sealed class ScreenGlitchOverlay : Overlay
+public sealed partial class ScreenGlitchOverlay : Overlay
 {
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IGameTiming _timing = default!;

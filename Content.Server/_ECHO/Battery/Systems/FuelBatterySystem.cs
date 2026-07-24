@@ -1,4 +1,3 @@
-using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
@@ -8,7 +7,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._ECHO.Battery;
 
-public sealed class FuelBatterySystem : EntitySystem
+public sealed partial class FuelBatterySystem : EntitySystem
 {
     [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private BatterySystem _battery = default!;

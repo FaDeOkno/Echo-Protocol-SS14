@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Echo.Postprocessing;
 
-public sealed class ScreenGlitchSystem : EntitySystem
+public sealed partial class ScreenGlitchSystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
     [Dependency] private IPlayerManager _player = default!;

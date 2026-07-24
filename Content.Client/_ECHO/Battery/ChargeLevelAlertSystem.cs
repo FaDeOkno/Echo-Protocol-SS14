@@ -12,11 +12,11 @@ namespace Content.Client._ECHO.Battery;
 
 public sealed partial class ChargeLevelAlertSystem : EntitySystem
 {
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private PowerCellSystem _powerCell = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private BatterySystem _battery = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const float AlertUpdateDelay = .5f;
 
