@@ -22,6 +22,7 @@
       Dead: BorgDead
     allowRevives: true
   - type: Damageable
+  - type: Injurable
     damageContainer: IPC
   - type: Repairable # Взамен на быструю починку я урезал лечение примерно в 3 раза. Это лучше, чем DoAfter на 30 секунд при попытке вылечить себя
     fuelCost: 3
@@ -90,10 +91,9 @@
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: Vocal
-    sounds:
-      Male: UnisexIPC
-      Female: UnisexIPC
-      Unsexed: UnisexIPC
+    emoteSounds: UnisexIPC
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
   - type: Deathgasp
     prototype: IPCDeathgasp
   - type: TypingIndicator
