@@ -71,11 +71,14 @@ public sealed partial class PosingSystem : SharedPosingSystem
     {
         base.FrameUpdate(frameTime);
 
-        var query = EntityQueryEnumerator<PosingComponent>();
-        while (query.MoveNext(out var uid, out var posing))
+        var query = EntityQueryEnumerator<PosingComponent, SpriteComponent>();
+        while (query.MoveNext(out var uid, out var posing, out var sprite))
         {
             posing.CurrentOffset = VectorExtensions.MoveTowards(posing.CurrentOffset, posing.DefaultOffset + posing.TargetOffset, frameTime * OffsetChangeSpeed);
             posing.CurrentAngle = AngleExtensions.MoveTowards(posing.CurrentAngle, posing.TargetAngle, frameTime * RotationChangeSpeed);
+
+            if (!posing.Posing && posing.CurrentOffset == posing.DefaultOffset && posing.CurrentAngle == posing.DefaultAngle)
+                continue;
 
             _sprite.SetOffset(uid, posing.CurrentOffset);
             _sprite.SetRotation(uid, posing.CurrentAngle);
