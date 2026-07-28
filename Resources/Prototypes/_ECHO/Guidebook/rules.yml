@@ -1,0 +1,95 @@
+- type: guideEntry
+  id: EchoRuleset
+  name: guide-entry-echo-ruleset
+  priority: 0
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/EchoRuleset.xml"
+  children:
+  - EchoRule0
+  - EchoRule1
+  - EchoRule2
+  - EchoRule3
+  - EchoRule4
+  - EchoRule5
+  - EchoRule6
+  - EchoRule7
+  - EchoRule8
+  - EchoRule9
+  - EchoRule10
+
+- type: guideEntry
+  id: EchoRule0
+  name: guide-entry-echo-rule0
+  priority: 1
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule0.xml"
+
+- type: guideEntry
+  id: EchoRule1
+  name: guide-entry-echo-rule1
+  priority: 2
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule1.xml"
+
+- type: guideEntry
+  id: EchoRule2
+  name: guide-entry-echo-rule2
+  priority: 3
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule2.xml"
+
+- type: guideEntry
+  id: EchoRule3
+  name: guide-entry-echo-rule3
+  priority: 4
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule3.xml"
+
+- type: guideEntry
+  id: EchoRule4
+  name: guide-entry-echo-rule4
+  priority: 5
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule4.xml"
+
+- type: guideEntry
+  id: EchoRule5
+  name: guide-entry-echo-rule5
+  priority: 6
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule5.xml"
+
+- type: guideEntry
+  id: EchoRule6
+  name: guide-entry-echo-rule6
+  priority: 7
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule6.xml"
+
+- type: guideEntry
+  id: EchoRule7
+  name: guide-entry-echo-rule7
+  priority: 8
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule7.xml"
+
+- type: guideEntry
+  id: EchoRule8
+  name: guide-entry-echo-rule8
+  priority: 9
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule8.xml"
+
+- type: guideEntry
+  id: EchoRule9
+  name: guide-entry-echo-rule9
+  priority: 10
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule9.xml"
+
+- type: guideEntry
+  id: EchoRule10
+  name: guide-entry-echo-rule10
+  priority: 11
+  ruleEntry: true
+  text: "/ServerInfo/_ECHO/Guidebook/ServerRules/Rule10.xml"
