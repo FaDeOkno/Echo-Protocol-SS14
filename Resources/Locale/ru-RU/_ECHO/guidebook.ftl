@@ -1,0 +1,13 @@
+guide-entry-echo-ruleset = Правила сервера
+guide-entry-echo-rules-char-desc = Правила описания персонажа
+guide-entry-echo-rule0 = Правило 0
+guide-entry-echo-rule1 = Правило 1
+guide-entry-echo-rule2 = Правило 2
+guide-entry-echo-rule3 = Правило 3
+guide-entry-echo-rule4 = Правило 4
+guide-entry-echo-rule5 = Правило 5
+guide-entry-echo-rule6 = Правило 6
+guide-entry-echo-rule7 = Правило 7
+guide-entry-echo-rule8 = Правило 8
+guide-entry-echo-rule9 = Правило 9
+guide-entry-echo-rule10 = Правило 10

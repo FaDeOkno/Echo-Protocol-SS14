@@ -1,0 +1,13 @@
+guide-entry-echo-ruleset = Server Rules
+guide-entry-echo-rules-char-desc = Character Description Rules
+guide-entry-echo-rule0 = Rule 0
+guide-entry-echo-rule1 = Rule 1
+guide-entry-echo-rule2 = Rule 2
+guide-entry-echo-rule3 = Rule 3
+guide-entry-echo-rule4 = Rule 4
+guide-entry-echo-rule5 = Rule 5
+guide-entry-echo-rule6 = Rule 6
+guide-entry-echo-rule7 = Rule 7
+guide-entry-echo-rule8 = Rule 8
+guide-entry-echo-rule9 = Rule 9
+guide-entry-echo-rule10 = Rule 10
