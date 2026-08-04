@@ -321,6 +321,8 @@ namespace Content.Client.Lobby.UI
 
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
+            InitializeBarks();  // ECHO-Tweak
+
             UpdateSpeciesGuidebookIcon();
             IsDirty = false;
         }
@@ -386,6 +388,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoicesControls(); // ECHO-Tweak
 
             RefreshAntags();
             RefreshJobs();
