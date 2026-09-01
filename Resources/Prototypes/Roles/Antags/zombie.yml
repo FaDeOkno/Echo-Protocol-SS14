@@ -10,7 +10,8 @@
     time: 1h
   # ECHO-Tweak-start
   - !type:SpeciesRequirement
-    species: IPC
+    species:
+    - IPC
     inverted: true
   # ECHO-Tweak-end
 
@@ -48,6 +49,7 @@
   # ECHO-Tweak-start
   requirements:
   - !type:SpeciesRequirement
-    species: IPC
+    species:
+    - IPC
     inverted: true
   # ECHO-Tweak-end
