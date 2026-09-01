@@ -15,7 +15,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      125: Dead
+      120: Dead
     stateAlertDict:
       Alive: BorgHealth
       Critical: BorgCrit
@@ -33,8 +33,8 @@
         Blunt: -10
         Slash: -10
         Piercing: -10
-  - type: CustomSuicideDamage
-    damageType: Shock
+  # - type: CustomSuicideDamage
+  #   damageType: Shock
 
   - type: Destructible
     thresholds:
