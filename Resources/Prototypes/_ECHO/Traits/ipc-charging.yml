@@ -16,7 +16,7 @@
     - type: FuelBattery
       fuelSolution: bloodstream
       reagentDrains:
-        WeldingFuel: 1
+        WeldingFuel: 2
     - type: Bloodstream
       bloodHealedSoundThreshold: -999
       bloodReferenceSolution:
@@ -30,6 +30,8 @@
       bloodlossThreshold: -1
       bleedReductionAmount: 0
       bloodRefreshAmount: 0
+    - type: InjectableSolution
+      solution: bloodstream
 
   - !type:RemoveComponentSpecial
     components:
