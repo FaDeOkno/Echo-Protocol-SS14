@@ -1,3 +1,4 @@
+using Content.Shared.Alert;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
@@ -19,6 +20,9 @@ public sealed partial class FuelBatteryComponent : Component
 
     [DataField, AutoNetworkedField]
     public string FuelSolution = "fuel";
+
+    [DataField, AutoNetworkedField]
+    public ProtoId<AlertPrototype> Alert = "EchoFuel";
 
     [ViewVariables]
     public TimeSpan NextUpdate = TimeSpan.Zero;

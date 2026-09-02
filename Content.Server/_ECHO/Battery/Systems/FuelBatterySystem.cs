@@ -1,4 +1,5 @@
 using Content.Server.Power.EntitySystems;
+using Content.Shared.Alert;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.PowerCell;
@@ -9,11 +10,45 @@ namespace Content.Server._ECHO.Battery;
 
 public sealed partial class FuelBatterySystem : EntitySystem
 {
+    [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private BatterySystem _battery = default!;
     [Dependency] private SharedSolutionContainerSystem _solContainer = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _proto = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<FuelBatteryComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<FuelBatteryComponent, SolutionChangedEvent>(OnSolutionChanged);
+    }
+
+    private void OnShutdown(Entity<FuelBatteryComponent> ent, ref ComponentShutdown args)
+    {
+        _alerts.ClearAlert(ent.Owner, ent.Comp.Alert);
+    }
+
+    private void OnSolutionChanged(Entity<FuelBatteryComponent> ent, ref SolutionChangedEvent args)
+    {
+        if (args.Solution.Comp.Id != ent.Comp.FuelSolution)
+            return;
+
+        var solution = args.Solution.Comp.Solution;
+        var reagents = solution.GetReagentPrototypes(_proto);
+        var quantity = 0f;
+
+        foreach (var item in reagents)
+        {
+            if (!ent.Comp.ReagentDrains.TryGetValue(item.Key, out var requiredVolume))
+                continue;
+
+            quantity += item.Value.Float();
+        }
+
+        _alerts.ShowAlert(ent.Owner, ent.Comp.Alert, (short)Math.Round((double)(quantity / solution.MaxVolume * 10)));
+    }
 
     public override void Update(float frameTime)
     {
