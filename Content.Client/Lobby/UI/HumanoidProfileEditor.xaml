@@ -88,7 +88,7 @@
                                     <OptionButton Name="SexButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- Voice -->
-                                <BoxContainer HorizontalExpand="True">
+                                <BoxContainer HorizontalExpand="True" Visible="False">  <!-- ECHO-Tweak: мы используем барки вместо голосов оффов -->
                                     <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
                                     <Control HorizontalExpand="True" />
                                     <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
@@ -112,7 +112,7 @@
                                     <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
                                 <!-- ECHO-Tweak : Barks -->
-                                <BoxContainer HorizontalExpand="True" Visible="False" Name="BarksContainer">
+                                <BoxContainer HorizontalExpand="True" Visible="True" Name="BarksContainer">
                                     <Label Text="{Loc 'humanoid-profile-editor-bark-label'}" />
                                     <Control HorizontalExpand="True"/>
                                     <Button Name="BarkProtoButton" HorizontalAlignment="Right" MinWidth="150" />
