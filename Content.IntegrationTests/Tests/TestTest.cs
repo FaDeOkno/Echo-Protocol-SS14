@@ -4,7 +4,7 @@ using Content.Shared.Medical;
 
 namespace Content.IntegrationTests.Tests.Medical;
 
-[TestOf(typeof(DefibrillatorComponent))]
+[TestFixture]
 public sealed class TestTest : GameTest
 {
     [Test]
